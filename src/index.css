@@ -3,10 +3,12 @@
     --color-text: #0D0D0D;
     --color-background-of-header-footer: #F9F9F9;
     --color-border-of-header-footer: #0D0D0D54;
-    /* The value below is used for converting css values which are sizes for desktop screens
-    to a value which can then be multiplied with the rem value, rem values vary depending on screen size.
-    Desktop screens use a font size of 16px, thus the desktop-screen-size-quotient is 1/16=0.0625 */
-    --desktop-screen-size-quotient: 0.0625;
+    /* The value below is used for converting css values in this project.
+    These css values are sizes based on html font-size 16 design. When these css values are multiplied with the value below
+    the result can then be multiplied with the rem value, resulting in the css values for the screen size in use.
+    This is accomplished because the rem values (html font-sizes) in this project are varied based on screen size (media queries).
+    (The value below is calculated by dividing 1 by 16.) */
+    --inverse-of-html-font-size-16: 0.0625;
 }
 
 *{
@@ -28,12 +30,6 @@ html {
 @media screen and (min-width: 1024px) {
     html {
         font-size: 16px;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    html {
-        font-size: 18px;
     }
 }
 

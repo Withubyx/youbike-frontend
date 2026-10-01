@@ -1,6 +1,6 @@
 
 .footer {
-    height: calc(100*var(--desktop-screen-size-quotient)*1rem);
+    height: calc(100*var(--inverse-of-html-font-size-16)*1rem);
     border-top: 1px solid var(--color-border-of-header-footer);
     background-color: var(--color-background-of-header-footer);
 }
@@ -11,14 +11,14 @@
 
 .footerLogo {
     position: absolute;
-    top: calc(20*var(--desktop-screen-size-quotient)*1rem);
-    left: calc(15*var(--desktop-screen-size-quotient)*1rem);
-    width: calc(200*var(--desktop-screen-size-quotient)*1rem);
-    height: calc(40*var(--desktop-screen-size-quotient)*1rem);
+    top: calc(20*var(--inverse-of-html-font-size-16)*1rem);
+    left: calc(15*var(--inverse-of-html-font-size-16)*1rem);
+    width: calc(200*var(--inverse-of-html-font-size-16)*1rem);
+    height: calc(40*var(--inverse-of-html-font-size-16)*1rem);
 }
 
 .footerText {
     position: absolute;
-    top: calc(67*var(--desktop-screen-size-quotient)*1rem);
-    left: calc(25*var(--desktop-screen-size-quotient)*1rem);
+    top: calc(67*var(--inverse-of-html-font-size-16)*1rem);
+    left: calc(25*var(--inverse-of-html-font-size-16)*1rem);
 }
