@@ -1,0 +1,20 @@
+.hamburger-container {
+    position: absolute;
+    top: calc(28*var(--inverse-of-html-font-size-16)*1rem);
+    left: calc(25*var(--inverse-of-html-font-size-16)*1rem);
+    z-index: 1;
+}
+
+.hamburger-button {
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger-menu-icon {
+    width: calc(44*var(--inverse-of-html-font-size-16)*1rem);
+    height: calc(44*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+.hamburger-dropdown {
+    width: calc(200*var(--inverse-of-html-font-size-16)*1rem);
+}
