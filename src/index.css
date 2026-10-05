@@ -1,8 +1,10 @@
 
 :root {
     --color-text: #0D0D0D;
+    --color-background-of-main: #FDFDFD;
     --color-background-of-header-footer: #F9F9F9;
     --color-border-of-header-footer: #0D0D0D54;
+    --color-background-of-active-navigation-bar-button: #FFD100;
     /* The value below is used for converting css values in this project.
     These css values are sizes based on html font-size 16 design. When these css values are multiplied with the value below
     the result can then be multiplied with the rem value, resulting in the css values for the screen size in use.
@@ -35,10 +37,20 @@ html {
 
 body {
     font-family: Inter, Arial, sans-serif;
-    font-size: 1rem;
+    font-size: calc(16*var(--inverse-of-html-font-size-16)*1rem);
     font-weight: 400;
 }
 
 p {
     color: var(--color-text);
+}
+
+.NavigationBar {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .navigation-bar {
+        display: none;
+    }
 }

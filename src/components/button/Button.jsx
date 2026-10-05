@@ -1,9 +1,8 @@
+import './Button.css';
 
-
-function Button() {
+function Button({ type, name, onClick, variant}) {
     return (
-        <button>
-        </button>
+        <button> type={type} name={name} onClick={onClick} className={variant}</button>
     );
 }
 

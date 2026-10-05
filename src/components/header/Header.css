@@ -4,21 +4,23 @@
     background-color: var(--color-background-of-header-footer);
 }
 
-.header div {
+.header-wrapper {
+    position: relative;
+    display: flex;
+}
+
+.split-inner-container-hamburger-menu-part {
+    width: 50%;
+}
+
+.split-inner-container-youbike-logo-part {
+    width: 50%;
     position: relative;
 }
 
-.hamburger-menu {
-    position: absolute;
-    top: calc(28*var(--inverse-of-html-font-size-16)*1rem);
-    left: calc(25*var(--inverse-of-html-font-size-16)*1rem);
-}
-
 .youbike-logo-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    left: calc(-250*var(--inverse-of-html-font-size-16)*1rem);
 }
 
 .youbike-logo {
@@ -34,8 +36,22 @@
     }
 }
 
-@media screen and (max-width: 505px) {
+@media screen and (max-width: 400px) {
+    .youbike-logo {
+        margin-top: 18px;
+        width: 200px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
     .youbike-logo-wrapper {
-        justify-content: flex-end;
+        left: -120px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .youbike-logo-wrapper {
+        left: -80px;
     }
 }

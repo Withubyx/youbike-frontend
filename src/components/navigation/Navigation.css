@@ -1,0 +1,43 @@
+.active-link {
+    background-color: var(--color-background-of-active-navigation-bar-button);
+}
+
+.navigation-bar-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+}
+
+.navigation-bar-list a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 700;
+    line-height: calc(24*var(--inverse-of-html-font-size-16)*1rem);
+    margin: 0 calc(10*var(--inverse-of-html-font-size-16)*1rem);
+    padding: calc(13*var(--inverse-of-html-font-size-16)*1rem) calc(16*var(--inverse-of-html-font-size-16)*1rem);
+    border-radius: calc(25*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+.hamburger-menu-list {
+    background-color: var(--color-background-of-main);
+    border: 1px solid var(--color-border-of-header-footer);
+    border-radius: 5px;
+    list-style: none;
+}
+
+.hamburger-menu-list a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 700;
+    line-height: calc(18*var(--inverse-of-html-font-size-16)*1rem);
+    margin: 0 calc(2*var(--inverse-of-html-font-size-16)*1rem);
+    padding: calc(0*var(--inverse-of-html-font-size-16)*1rem) calc(6*var(--inverse-of-html-font-size-16)*1rem);
+    border-radius: calc(25*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+@media screen and (max-width: 1024px) {
+    .navigation-bar-list a {
+        margin: 0;
+    }
+}

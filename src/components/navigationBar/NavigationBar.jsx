@@ -1,29 +1,13 @@
-import Button from "../button/Button.jsx";
-import './NavigationBar.css'
+import './NavigationBar.css';
+import Navigation from "../navigation/Navigation.jsx";
+import navigationItems from "../../constants/navigation-Items.js";
 
 function NavigationBar() {
     return (
         <div className="outer-container navigation-bar">
-            <ul className="inner-container">
-                <li>
-                    <Button type="button">Home</Button>
-                </li>
-                <li>
-                    <Button type="button">Bikes</Button>
-                </li>
-                <li>
-                    <Button type="button">Bike Rides</Button>
-                </li>
-                <li>
-                    <Button type="button">My Bikes & Bike Rides</Button>
-                </li>
-                <li>
-                    <Button type="button">Sign In</Button>
-                </li>
-                <li>
-                    <Button type="button">Create Free Account</Button>
-                </li>
-            </ul>
+            <div className="inner-container">
+                <Navigation navigationItems={navigationItems} classNameList="navigation-bar-list" />
+            </div>
         </div>
     );
 }

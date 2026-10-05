@@ -1,4 +1,3 @@
-
 .navigation-bar {
     height: calc(60*var(--inverse-of-html-font-size-16)*1rem);
     justify-content: center;
@@ -6,11 +5,4 @@
     background-color: var(--color-background-of-header-footer);
     border-top: 1px solid var(--color-border-of-header-footer);
     border-bottom: 1px solid var(--color-border-of-header-footer);
-}
-
-.navigation-bar ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
 }
