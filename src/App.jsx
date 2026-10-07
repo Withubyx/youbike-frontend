@@ -1,25 +1,21 @@
 import Header from "./components/header/Header.jsx";
 import NavigationBar from "./components/navigationBar/NavigationBar.jsx";
+import SignIn from "./pages/signInPage/SignIn.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import "./App.css";
-// import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 
 function App() {
 
   return (
-    <>
+    <div className="page-wrapper">
         <Header />
         <NavigationBar />
-        {/*<Routes>*/}
-            {/*<Route path="/" element={<Home/>} />*/}
-            {/*<Route path="/bikes" element={<Bikes>} />*/}
-            {/*<Route path="/bike-rides" element={<BikeRides>} />*/}
-            {/*<Route path="/my-bikes-and-bike-rides" element={<MyBikesAndBikeRides>} />*/}
-            {/*<Route path="/create-free-account" element={<CreateFreeAccount>} />*/}
-            {/*<Route path="/my-account" element={<MyAccount>} />*/}
-        {/*</Routes>*/}
+        <Routes>
+            <Route path="/sign-in" element={<SignIn />} />
+        </Routes>
         <Footer />
-    </>
+    </div>
   )
 }
 

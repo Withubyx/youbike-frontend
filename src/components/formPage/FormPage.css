@@ -1,0 +1,49 @@
+.form-page {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: calc(25*var(--inverse-of-html-font-size-16)*1rem);
+    );
+}
+
+.form-page h1 {
+    margin-top: calc(32*var(--inverse-of-html-font-size-16)*1rem);
+    margin-bottom: calc(1*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+form label {
+    color: var(--color-input-label-text);
+    font-weight: 500;
+    line-height: calc(20*var(--inverse-of-html-font-size-16)*1rem);
+    margin-top: calc(28*var(--inverse-of-html-font-size-16)*1rem);
+    margin-bottom: calc(3*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+form input {
+    background-color: var(--color-background-of-input-field);
+    width: calc(440*var(--inverse-of-html-font-size-16)*1rem);
+    height: calc(48*var(--inverse-of-html-font-size-16)*1rem);
+    padding: calc(12*var(--inverse-of-html-font-size-16)*1rem) calc(16*var(--inverse-of-html-font-size-16)*1rem);
+    border: 1px solid var(--color-border-of-input-field);
+    box-shadow: 0.5px 0.5px 1px 1px var(--color-border-of-input-field-shadow);
+    border-radius: calc(8*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+.form-page button {
+    margin-top: calc(24*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+.form-page p {
+    font-size: calc(14*var(--inverse-of-html-font-size-16)*1rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: calc(24*var(--inverse-of-html-font-size-16)*1rem);
+    margin-top: calc(14*var(--inverse-of-html-font-size-16)*1rem);
+    margin-bottom: calc(20*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+@media screen and (max-width: 400px) {
+    form input {
+        width: calc(300*var(--inverse-of-html-font-size-16)*1rem);
+    }
+}

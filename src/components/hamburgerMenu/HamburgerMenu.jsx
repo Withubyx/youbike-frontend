@@ -11,7 +11,6 @@ function HamburgerMenu() {
         <div className="hamburger-container">
             <button
                 type="button"
-                className="hamburger-button"
                 onClick={() => setMenuOpen((open) => !open)}
             >
                 <HamburgerMenuIcon className="hamburger-menu-icon" />

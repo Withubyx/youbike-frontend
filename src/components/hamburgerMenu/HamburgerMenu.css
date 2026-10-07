@@ -5,11 +5,6 @@
     z-index: 1;
 }
 
-.hamburger-button {
-    border: none;
-    cursor: pointer;
-}
-
 .hamburger-menu-icon {
     width: calc(44*var(--inverse-of-html-font-size-16)*1rem);
     height: calc(44*var(--inverse-of-html-font-size-16)*1rem);
