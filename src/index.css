@@ -18,7 +18,7 @@
 
     /* The value below is used for converting css values in this project.
     These css values are sizes based on html font-size 16 design. When these css values are multiplied with the value below
-    the result can then be multiplied with the rem value, resulting in the css values for the screen size in use.
+    the result can then be multiplied with the rem value, resulting in the css values for the screen size in use (responsiveness).
     This is accomplished because the rem values (html font-sizes) in this project are varied based on screen size (media queries).
     (The value below is calculated by dividing 1 by 16.) */
     --inverse-of-html-font-size-16: 0.0625;

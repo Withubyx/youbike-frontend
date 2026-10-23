@@ -1,5 +1,7 @@
 import FormPage from '../../components/formPage/FormPage.jsx';
 import {useForm} from "react-hook-form";
+import axios from "axios";
+import backendApiBaseUrl from "../../config/configuration.js";
 
 const inputObjects = [
     {
@@ -31,7 +33,7 @@ const inputObjects = [
             },
             minLength: {
                 value: 10,
-                message: "Password must be at least 8 characters long."
+                message: "Password must be at least 10 characters long."
             },
             maxLength: {
                 value: 100,
@@ -44,15 +46,23 @@ const inputObjects = [
 function SignIn() {
     const {register, handleSubmit, formState: {errors}} = useForm({mode: 'onBlur'});
 
-    function handleFormSubmit(data) {
-        console.log(data);
+    async function handleFormSubmit(data) {
+        const response = await axios.post(
+            backendApiBaseUrl + "/sign-in",
+            {
+                email: data.email,
+                password: data.password
+            }
+        );
+        const JWT = response.data.jwt
+        await login(JWT);
     }
 
     return (
         <FormPage
             handleSubmit={handleSubmit}
             handleFormSubmit={handleFormSubmit}
-            pageTitle="Meat, share, comment..."
+            pageTitle="Meet, share, comment..."
             inputObjects={inputObjects}
             register={register}
             errors={errors}
