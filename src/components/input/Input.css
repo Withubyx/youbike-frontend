@@ -1,3 +1,21 @@
+label {
+    color: var(--color-input-label-text);
+    font-weight: 500;
+}
+
+input {
+    background-color: var(--color-background-of-input-field);
+    border: 1px solid var(--color-border-of-input-field);
+    box-shadow: 0.5px 0.5px 1px 1px var(--color-border-of-input-field-shadow);
+    border-radius: calc(8*var(--inverse-of-html-font-size-16)*1rem);
+    outline: none;
+}
+
+input:focus {
+    border: 2px solid var(--color-border-of-input-field-in-focus);
+    box-shadow: 1px 1px 1px 1px var(--color-border-of-input-field-shadow-in-focus);
+}
+
 .validation-message {
-    color: var(--color-input-validation-text);
+    color: var(--color-error-text);
 }

@@ -1,9 +1,11 @@
 import FormPage from '../../components/formPage/FormPage.jsx';
 import {useForm} from "react-hook-form";
 import axios from "axios";
-import backendApiBaseUrl from "../../config/configuration.js";
+import {youBikeApiBaseUrl} from "../../config/configuration.js";
+import {useContext, useState} from "react";
+import {AuthContext} from "../../context/AuthContext.jsx";
 
-const inputObjects = [
+const inputPropsList = [
     {
         inputId: "email-field",
         inputType: "text",
@@ -45,17 +47,40 @@ const inputObjects = [
 
 function SignIn() {
     const {register, handleSubmit, formState: {errors}} = useForm({mode: 'onBlur'});
+    const {login} = useContext(AuthContext);
+    const [errorMessage, setErrorMessage] = useState("");
+    const [loading, toggleLoading] = useState(false);
+
+    const buttonProps = {
+        type: "submit",
+        name: "Sign In",
+        variant: "button-main",
+        disabled: loading,
+    }
 
     async function handleFormSubmit(data) {
-        const response = await axios.post(
-            backendApiBaseUrl + "/sign-in",
-            {
-                email: data.email,
-                password: data.password
-            }
-        );
-        const JWT = response.data.jwt
-        await login(JWT);
+        setErrorMessage("");
+        try {
+            toggleLoading(true);
+            const response = await axios.post(
+                `${youBikeApiBaseUrl}/login`,
+                {
+                    email: data.email,
+                    password: data.password
+                }
+            );
+            const JWT = response.headers['authorization'].substring(7);
+            await login(JWT);
+        } catch (e) {
+        console.error(e);
+        if (e.response && e.response.status === 401) {
+            setErrorMessage("Wrong email and/or password");
+        } else {
+            setErrorMessage("Sign in failed");
+        }
+        } finally {
+            toggleLoading(false);
+        }
     }
 
     return (
@@ -63,9 +88,11 @@ function SignIn() {
             handleSubmit={handleSubmit}
             handleFormSubmit={handleFormSubmit}
             pageTitle="Meet, share, comment..."
-            inputObjects={inputObjects}
+            inputPropsList={inputPropsList}
+            buttonProps={buttonProps}
             register={register}
             errors={errors}
+            errorMessage={errorMessage}
         />
     );
 }
