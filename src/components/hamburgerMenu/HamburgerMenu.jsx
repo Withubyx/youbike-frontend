@@ -1,6 +1,6 @@
 import HamburgerMenuIcon from '../../assets/hamburger-menu.svg?react';
 import Navigation from "../navigation/Navigation.jsx";
-import navigationItems from "../../constants/navigation-Items.js";
+import navigationUrls from "../../constants/navigationUrls.js";
 import { useState} from "react";
 import './HamburgerMenu.css';
 
@@ -11,7 +11,6 @@ function HamburgerMenu() {
         <div className="hamburger-container">
             <button
                 type="button"
-                className="hamburger-button"
                 onClick={() => setMenuOpen((open) => !open)}
             >
                 <HamburgerMenuIcon className="hamburger-menu-icon" />
@@ -19,7 +18,7 @@ function HamburgerMenu() {
             {menuOpen && (
                 <div className={"hamburger-dropdown"}>
                     <Navigation
-                        navigationItems={navigationItems}
+                        navigationItems={navigationUrls}
                         classNameList="hamburger-menu-list"
                         closeHamburgerMenu={() => setMenuOpen(false)}
                     />

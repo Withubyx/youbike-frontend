@@ -1,0 +1,7 @@
+.button-main {
+    font-weight: 500;
+    padding: calc(10 * var(--inverse-of-html-font-size-16) * 1rem) calc(16 * var(--inverse-of-html-font-size-16) * 1rem);
+    border-radius: calc(18 * var(--inverse-of-html-font-size-16) * 1rem);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
+    background: var(--color-background-of-main-button);
+}

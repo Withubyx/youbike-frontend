@@ -1,13 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
     --color-text: #0D0D0D;
+    --color-input-label-text: rgba(64, 64, 64, 0.90);
     --color-background-of-main: #FDFDFD;
-    --color-background-of-header-footer: #F9F9F9;
     --color-border-of-header-footer: #0D0D0D54;
+    --color-background-of-header-footer: #F9F9F9;
+    --color-error-text: red;
+
+    --color-border-of-input-field: rgba(212, 212, 212, 1.00);
+    --color-border-of-input-field-in-focus: rgba(59, 190, 112, 1.00);
+    --color-border-of-input-field-shadow: rgba(212, 212, 212, 0.20);
+    --color-border-of-input-field-shadow-in-focus: rgba(59, 190, 112, 0.20);
+    --color-background-of-input-field: #FFFFFF;
+
     --color-background-of-active-navigation-bar-button: #FFD100;
+    --color-background-of-main-button: #FFF0AA;
+
     /* The value below is used for converting css values in this project.
     These css values are sizes based on html font-size 16 design. When these css values are multiplied with the value below
-    the result can then be multiplied with the rem value, resulting in the css values for the screen size in use.
+    the result can then be multiplied with the rem value, resulting in the css values for the screen size in use (responsiveness).
     This is accomplished because the rem values (html font-sizes) in this project are varied based on screen size (media queries).
     (The value below is calculated by dividing 1 by 16.) */
     --inverse-of-html-font-size-16: 0.0625;
@@ -39,10 +52,21 @@ body {
     font-family: Inter, Arial, sans-serif;
     font-size: calc(16*var(--inverse-of-html-font-size-16)*1rem);
     font-weight: 400;
+    color: var(--color-text);
 }
 
-p {
-    color: var(--color-text);
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: calc(36*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: Inter, Arial, sans-serif;
+    font-size: calc(16*var(--inverse-of-html-font-size-16)*1rem);
 }
 
 .NavigationBar {

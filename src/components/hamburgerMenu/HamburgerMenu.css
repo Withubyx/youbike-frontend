@@ -5,16 +5,18 @@
     z-index: 1;
 }
 
-.hamburger-button {
-    border: none;
-    cursor: pointer;
-}
-
 .hamburger-menu-icon {
     width: calc(44*var(--inverse-of-html-font-size-16)*1rem);
     height: calc(44*var(--inverse-of-html-font-size-16)*1rem);
 }
 
 .hamburger-dropdown {
-    width: calc(200*var(--inverse-of-html-font-size-16)*1rem);
+    width: calc(220*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
 }
