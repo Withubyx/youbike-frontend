@@ -6,6 +6,7 @@ const navigationUrls = [
     {id: 'Sign In', url: '/sign-in'},
     {id: 'Create Free Account', url: '/create-free-account'},
     {id: 'My Account', url: '/my-account'},
+    {id: 'Sign out', url: '/login'},
 ];
 
 export default navigationUrls;
