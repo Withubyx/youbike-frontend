@@ -4,7 +4,7 @@ import axios from "axios";
 import {youBikeApiBaseUrl} from "../../config/configuration.js";
 import {useContext, useState} from "react";
 import {AuthContext} from "../../context/AuthContext.jsx";
-import ErrorPage from "../../components/errorPage/ErrorPage.jsx";
+import MessagePage from "../../components/messagePage/MessagePage.jsx";
 import NavigationUrls from "../../constants/navigationUrls.js";
 
 const inputPropsList = [
@@ -89,11 +89,11 @@ function SignIn() {
         <>
             {isAuth
                 ?
-                <ErrorPage
-                    title={"You are already signed in."}
-                    text={"Sign out and then sign in as another user or... go to "}
+                <MessagePage
+                    title="You are already signed in."
+                    text="Sign out and then sign in as another user or... go to "
                     linkUrlWithoutBase={(NavigationUrls.find((item) => item.id === 'Home').url)}
-                    linkText={"Home"}
+                    linkText="Home"
                 />
                 :
                 <FormPage

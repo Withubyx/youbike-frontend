@@ -15,13 +15,15 @@ function FormPage({handleSubmit, handleFormSubmit, pageTitle, inputPropsList, bu
                         inputName={inputProps.inputName}
                         inputId={inputProps.inputId}
                         inputLabel={inputProps.inputLabel}
+                        inputPlaceholder={inputProps.inputPlaceholder}
+                        inputOptions={inputProps.inputOptions}
                         validationRules={inputProps.validationRules}
                         register={register}
                         errors={errors}
                     />
                 );
             })}
-                {errorMessage && <p className="error-text">{errorMessage}</p>}
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
                 <Button
                     type={buttonProps.type}
                     name={buttonProps.name}

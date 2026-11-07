@@ -1,10 +1,12 @@
 import Header from "./components/header/Header.jsx";
 import NavigationBar from "./components/navigationBar/NavigationBar.jsx";
-import SignIn from "./pages/signInPage/SignIn.jsx";
-import NotFound from "./pages/notFoundPage/NotFound.jsx";
+import SignIn from "./pages/signIn/SignIn.jsx";
+import CreateFreeAccount from "./pages/createFreeAccount/CreateFreeAccount.jsx";
+import NotFound from "./pages/notFound/NotFound.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import "./App.css";
 import { Routes, Route } from "react-router-dom"
+import navigationUrls from "./constants/navigationUrls.js";
 
 function App() {
 
@@ -13,7 +15,8 @@ function App() {
         <Header />
         <NavigationBar />
         <Routes>
-            <Route path="/sign-in" element={<SignIn />} />
+            <Route path={navigationUrls.find(url => url.id === 'Sign In').url} element={<SignIn />} />
+            <Route path={navigationUrls.find(url => url.id === 'Create Free Account').url} element={<CreateFreeAccount />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

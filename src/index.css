@@ -4,10 +4,12 @@
 :root {
     --color-text: #0D0D0D;
     --color-input-label-text: rgba(64, 64, 64, 0.90);
+    --color-placeholder-text: rgba(73, 73, 73, 0.50);
     --color-background-of-main: #FDFDFD;
     --color-border-of-header-footer: #0D0D0D54;
     --color-background-of-header-footer: #F9F9F9;
-    --color-error-text: red;
+    --color-error-message: red;
+    --color-success-message: green;
 
     --color-border-of-input-field: rgba(212, 212, 212, 1.00);
     --color-border-of-input-field-in-focus: rgba(59, 190, 112, 1.00);
