@@ -1,7 +1,7 @@
-import './ErrorPage.css'
+import './MessagePage.css'
 import {Link} from "react-router-dom";
 
-function ErrorPage({title, text, linkUrlWithoutBase, linkText}) {
+function MessagePage({title, text, linkUrlWithoutBase, linkText}) {
     return (
         <main className="outer-container">
             <div className="inner-container error-page">
@@ -12,4 +12,4 @@ function ErrorPage({title, text, linkUrlWithoutBase, linkText}) {
     )
 }
 
-export default ErrorPage;
+export default MessagePage;

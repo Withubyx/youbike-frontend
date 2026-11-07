@@ -3,12 +3,43 @@ label {
     font-weight: 500;
 }
 
-input {
+input, select {
     background-color: var(--color-background-of-input-field);
+    color: var(--color-placeholder-text);
+    font-size: calc(16*var(--inverse-of-html-font-size-16)*1rem);
+    font-weight: 600;
     border: 1px solid var(--color-border-of-input-field);
     box-shadow: 0.5px 0.5px 1px 1px var(--color-border-of-input-field-shadow);
     border-radius: calc(8*var(--inverse-of-html-font-size-16)*1rem);
     outline: none;
+}
+
+.radio-type-input-fieldset {
+    border: none;
+}
+
+.radio-type-input-wrapper {
+    padding-left: calc(16*var(--inverse-of-html-font-size-16)*1rem);
+    width: auto;
+    height: calc(48*var(--inverse-of-html-font-size-16)*1rem);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: calc(32*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+.radio-type-input-label {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: calc(8*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+.radio-type-input {
+    margin-top: calc(2*var(--inverse-of-html-font-size-16)*1rem);
+    accent-color: var(--color-text);
+    height: calc(16*var(--inverse-of-html-font-size-16)*1rem);
+    width: fit-content;
 }
 
 input:focus {
@@ -17,5 +48,5 @@ input:focus {
 }
 
 .validation-message {
-    color: var(--color-error-text);
+    color: var(--color-error-message);
 }

@@ -11,13 +11,13 @@
     margin-bottom: calc(1*var(--inverse-of-html-font-size-16)*1rem);
 }
 
-form label {
+form label, form legend {
     line-height: calc(20*var(--inverse-of-html-font-size-16)*1rem);
     margin-top: calc(28*var(--inverse-of-html-font-size-16)*1rem);
     margin-bottom: calc(3*var(--inverse-of-html-font-size-16)*1rem);
 }
 
-form input {
+form input, form select {
     width: calc(440*var(--inverse-of-html-font-size-16)*1rem);
     height: calc(48*var(--inverse-of-html-font-size-16)*1rem);
     padding: calc(12*var(--inverse-of-html-font-size-16)*1rem) calc(16*var(--inverse-of-html-font-size-16)*1rem);
@@ -36,8 +36,8 @@ form input {
     margin-bottom: calc(20*var(--inverse-of-html-font-size-16)*1rem);
 }
 
-.error-text {
-    color: var(--color-error-text);
+.error-message {
+    color: var(--color-error-message);
     font-size: calc(17*var(--inverse-of-html-font-size-16)*1rem);
     font-weight: 400;
     font-style: italic;
@@ -45,7 +45,7 @@ form input {
 }
 
 @media screen and (max-width: 400px) {
-    form input {
+    form input, form select {
         width: calc(300*var(--inverse-of-html-font-size-16)*1rem);
     }
 }
