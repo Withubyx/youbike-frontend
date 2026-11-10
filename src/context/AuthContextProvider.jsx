@@ -7,12 +7,22 @@ import checkTokenExpired from "../helpers/checkTokenExpired.js";
 import {youBikeApiBaseUrl} from "../config/configuration.js";
 
 function AuthContextProvider( { children } ) {
-    const [ isAuth, toggleIsAuth ] = useState( {
+    const [ isAuth, setIsAuth ] = useState( {
         isAuth: false,
         user: null,
         status: 'pending',
     } );
     const navigate = useNavigate();
+
+    function changeUsername ( newUsername ) {
+        setIsAuth( {
+            ...isAuth,
+            user: {
+                ...isAuth.user,
+                username: newUsername
+            }
+        });
+    }
 
     async function fetchUserData( decoded, token, redirectUrl ) {
         try {
@@ -25,7 +35,7 @@ function AuthContextProvider( { children } ) {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                toggleIsAuth( {
+                setIsAuth( {
                     ...isAuth,
                     isAuth: true,
                     user: {
@@ -45,7 +55,7 @@ function AuthContextProvider( { children } ) {
                         },
                     });
                 }
-                toggleIsAuth( {
+                setIsAuth( {
                     ...isAuth,
                     isAuth: true,
                     user: {
@@ -65,7 +75,7 @@ function AuthContextProvider( { children } ) {
         } catch ( e ) {
             console.error( e );
             localStorage.removeItem('token');
-            toggleIsAuth( {
+            setIsAuth( {
                 isAuth: false,
                 user: null,
                 status: 'done',
@@ -80,7 +90,7 @@ function AuthContextProvider( { children } ) {
             const decoded = jwtDecode( token );
             if (checkTokenExpired(decoded.exp)) {
                 localStorage.removeItem('token');
-                toggleIsAuth({
+                setIsAuth({
                     isAuth: false,
                     user: null,
                     status: 'done',
@@ -89,7 +99,7 @@ function AuthContextProvider( { children } ) {
                 void fetchUserData(decoded, token);
             }
         } else {
-            toggleIsAuth( {
+            setIsAuth( {
                 isAuth: false,
                 user: null,
                 status: 'done',
@@ -105,7 +115,7 @@ function AuthContextProvider( { children } ) {
 
     function logout() {
         localStorage.removeItem('token');
-        toggleIsAuth( {
+        setIsAuth( {
             isAuth: false,
             user: null,
             status: 'done',
@@ -117,7 +127,8 @@ function AuthContextProvider( { children } ) {
     const contextData = {
         ...isAuth,
         login,
-        logout
+        logout,
+        changeUsername
     };
 
     return (

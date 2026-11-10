@@ -1,11 +1,10 @@
-import {useContext, useState} from "react";
+import {useState} from "react";
 import FormPage from "../../components/formPage/FormPage.jsx";
 import {useForm} from "react-hook-form";
 import axios from "axios";
 import {youBikeApiBaseUrl} from "../../config/configuration.js";
 import MessagePage from "../../components/messagePage/MessagePage.jsx";
-import NavigationUrls from "../../constants/navigationUrls.js";
-import {AuthContext} from "../../context/AuthContext.jsx";
+import navigationUrls from "../../constants/navigationUrls.js";
 
 const inputPropsList = {
     bikeCompanyUser: [
@@ -64,7 +63,7 @@ const inputPropsList = {
             inputLabel: "Country *",
             inputOptions: [
                 {value: "BE", label: "Belgium"},
-                {value: "DE", label: "Deutschland"},
+                {value: "DE", label: "Germany"},
                 {value: "NL", label: "Netherlands"},
             ],
             validationRules: {
@@ -213,7 +212,7 @@ const inputPropsList = {
             inputLabel: "Country *",
             inputOptions: [
                 {value: "BE", label: "Belgium"},
-                {value: "DE", label: "Deutschland"},
+                {value: "DE", label: "Germany"},
                 {value: "NL", label: "Netherlands"},
             ],
             validationRules: {
@@ -288,7 +287,6 @@ const inputPropsList = {
 
 function CreateFreeAccount() {
     const {register, handleSubmit, reset, formState: {errors}, watch} = useForm({mode: "onBlur", defaultValues: {userType: "CYCLIST"}});
-    const {isAuth} = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
     const [loading, toggleLoading] = useState(false);
@@ -355,35 +353,25 @@ function CreateFreeAccount() {
 
     return (
         <>
-            {isAuth
+            {successMessage
                 ?
                 <MessagePage
-                    title="You are signed in."
-                    text="First sign out and then you can create a new account, or... go to "
-                    linkUrlWithoutBase={(NavigationUrls.find((item) => item.id === 'Home').url)}
-                    linkText="Home"
+                    title={successMessage}
+                    text="Enjoy all the services available to account holders... go to "
+                    linkUrlWithoutBase={(navigationUrls.find((item) => item.id === 'Sign In').url)}
+                    linkText="Sign In"
                 />
                 :
-                (successMessage
-                    ?
-                    <MessagePage
-                        title={successMessage}
-                        text="Enjoy all the services available to account holders... go to "
-                        linkUrlWithoutBase={(NavigationUrls.find((item) => item.id === 'Sign In').url)}
-                        linkText="Sign In"
-                    />
-                    :
-                    <FormPage
-                        handleSubmit={handleSubmit}
-                        handleFormSubmit={handleFormSubmit}
-                        pageTitle="Create a Free account"
-                        inputPropsList={userTypeBasedInputPropsList}
-                        buttonProps={buttonProps}
-                        register={register}
-                        errors={errors}
-                        errorMessage={errorMessage}
-                    />
-                )
+                <FormPage
+                    handleSubmit={handleSubmit}
+                    handleFormSubmit={handleFormSubmit}
+                    pageTitle="Create a Free account"
+                    inputPropsList={userTypeBasedInputPropsList}
+                    buttonProps={buttonProps}
+                    register={register}
+                    errors={errors}
+                    errorMessage={errorMessage}
+                />
             }
         </>
     );
