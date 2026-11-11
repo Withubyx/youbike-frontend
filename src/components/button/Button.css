@@ -5,3 +5,8 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
     background: var(--color-background-of-main-button);
 }
+
+.button-main:hover {
+    background: var(--color-background-of-active-navigation-bar-button);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.40);
+}

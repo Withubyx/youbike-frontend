@@ -48,6 +48,30 @@ function Input({ inputType, inputName, inputLabel, inputId, inputPlaceholder, in
                     {errors[inputName] && <p className="validation-message">{errors[inputName].message}</p>}
                 </>
             )}
+            {inputType === 'textarea' && (
+                <>
+                    <label htmlFor={inputId}>{inputLabel}</label>
+                    <textarea
+                        id={inputId}
+                        placeholder={inputPlaceholder}
+                        {...register(inputName, validationRules)}
+                    />
+                    {errors[inputName] && <p className="validation-message">{errors[inputName].message}</p>}
+                </>
+            )}
+            {inputType === 'file' && (
+                <>
+                    <label htmlFor={inputId}>{inputLabel}</label>
+                    <input
+                        className="file-type-input"
+                        type={inputType}
+                        id={inputId}
+                        placeholder={inputPlaceholder}
+                        {...register(inputName, validationRules)}
+                    />
+                    {errors[inputName] && <p className="validation-message">{errors[inputName].message}</p>}
+                </>
+            )}
         </>
     );
 }

@@ -286,7 +286,7 @@ const inputPropsList = {
 }
 
 function CreateFreeAccount() {
-    const {register, handleSubmit, reset, formState: {errors}, watch} = useForm({mode: "onBlur", defaultValues: {userType: "CYCLIST"}});
+    const {register, handleSubmit, formState: {errors}, watch} = useForm({mode: "onChange", defaultValues: {userType: "CYCLIST"}});
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
     const [loading, toggleLoading] = useState(false);
@@ -342,7 +342,6 @@ function CreateFreeAccount() {
                 }
             }
             setSuccessMessage("🎉 Account is created successfully!");
-            reset();
         } catch (e) {
             console.error(e);
             setErrorMessage("Error creating account");
@@ -354,15 +353,13 @@ function CreateFreeAccount() {
     return (
         <>
             {successMessage
-                ?
-                <MessagePage
+                ? <MessagePage
                     title={successMessage}
                     text="Enjoy all the services available to account holders... go to "
-                    linkUrlWithoutBase={(navigationUrls.find((item) => item.id === 'Sign In').url)}
+                    linkUrlWithoutBase={navigationUrls.find((item) => item.id === 'Sign In').url}
                     linkText="Sign In"
                 />
-                :
-                <FormPage
+                : <FormPage
                     handleSubmit={handleSubmit}
                     handleFormSubmit={handleFormSubmit}
                     pageTitle="Create a Free account"

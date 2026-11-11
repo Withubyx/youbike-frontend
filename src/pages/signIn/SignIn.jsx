@@ -46,7 +46,7 @@ const inputPropsList = [
 ];
 
 function SignIn() {
-    const {register, handleSubmit, formState: {errors}} = useForm({mode: 'onBlur'});
+    const {register, handleSubmit, formState: {errors}} = useForm({mode: 'onChange'});
     const {login} = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState("");
     const [loading, toggleLoading] = useState(false);
