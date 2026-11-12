@@ -264,7 +264,7 @@ function MyAccount() {
             try {
                 if (user.userRole === "ROLE_BIKE_COMPANY") {
                     const result = await axios.get(`${youBikeApiBaseUrl}/bike-companies/${user.id}`,
-                        {signal: controller.signal,});
+                        {signal: controller.signal});
                     setValue("name", result.data.name);
                     setValue("bikeCompanyType", result.data.bikeCompanyType);
                     setValue("countryCode", result.data.addressLocation.countryCode);
