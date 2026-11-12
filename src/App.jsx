@@ -2,6 +2,7 @@ import Header from "./components/header/Header.jsx";
 import NavigationBar from "./components/navigationBar/NavigationBar.jsx";
 import CreateBike from "./pages/createBike/CreateBike.jsx";
 import UpdateBike from "./pages/updateBike/UpdateBike.jsx";
+import CreateBikeRide from "./pages/createBikeRide/CreateBikeRide.jsx";
 import SignIn from "./pages/signIn/SignIn.jsx";
 import CreateFreeAccount from "./pages/createFreeAccount/CreateFreeAccount.jsx";
 import MyAccount from "./pages/myAccount/MyAccount.jsx";
@@ -49,6 +50,14 @@ function App() {
                             linkUrlWithoutBase={navigationUrls.find((item) => item.id === 'Home').url}
                             linkText="Home"
                         />
+                    : <Navigate to={navigationUrls.find(url => url.id === 'Sign In').url} />
+                }
+            />
+            <Route
+                path={navigationUrls.find(url => url.id === 'Create Bike Ride').url}
+                element={
+                    isAuth === true
+                    ? <CreateBikeRide />
                     : <Navigate to={navigationUrls.find(url => url.id === 'Sign In').url} />
                 }
             />
