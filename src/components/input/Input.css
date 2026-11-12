@@ -3,7 +3,7 @@ label {
     font-weight: 500;
 }
 
-input, select {
+input, select, textarea {
     background-color: var(--color-background-of-input-field);
     color: var(--color-placeholder-text);
     font-size: calc(16*var(--inverse-of-html-font-size-16)*1rem);
@@ -14,7 +14,7 @@ input, select {
     outline: none;
 }
 
-.radio-type-input-fieldset {
+.radio-type-input-fieldset, .file-type-input {
     border: none;
 }
 
@@ -49,4 +49,5 @@ input:focus {
 
 .validation-message {
     color: var(--color-error-message);
+    font-style: italic;
 }

@@ -17,10 +17,14 @@ form label, form legend {
     margin-bottom: calc(3*var(--inverse-of-html-font-size-16)*1rem);
 }
 
-form input, form select {
+form input, form select, form textarea {
     width: calc(440*var(--inverse-of-html-font-size-16)*1rem);
     height: calc(48*var(--inverse-of-html-font-size-16)*1rem);
     padding: calc(12*var(--inverse-of-html-font-size-16)*1rem) calc(16*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+form textarea {
+    height: calc(96*var(--inverse-of-html-font-size-16)*1rem);
 }
 
 .form-page button {
@@ -45,7 +49,7 @@ form input, form select {
 }
 
 @media screen and (max-width: 400px) {
-    form input, form select {
+    form input, form select, form textarea {
         width: calc(300*var(--inverse-of-html-font-size-16)*1rem);
     }
 }

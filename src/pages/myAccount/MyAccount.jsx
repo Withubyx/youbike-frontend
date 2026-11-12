@@ -182,7 +182,7 @@ const inputPropsList = {
 }
 
 function MyAccount() {
-    const {register, handleSubmit, setValue, formState: {errors}} = useForm({mode: "onBlur"});
+    const {register, handleSubmit, setValue, formState: {errors}} = useForm({mode: "onChange"});
     const {user, changeUsername} = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
@@ -251,7 +251,7 @@ function MyAccount() {
             setSuccessMessage("Your YouBike profile has been saved.");
         } catch (e) {
             console.error(e);
-            setErrorMessage("Error getting your profile");
+            setErrorMessage("Error editing your profile");
         } finally {
             toggleLoading(false);
         }
@@ -264,7 +264,7 @@ function MyAccount() {
             try {
                 if (user.userRole === "ROLE_BIKE_COMPANY") {
                     const result = await axios.get(`${youBikeApiBaseUrl}/bike-companies/${user.id}`,
-                        {signal: controller.signal,});
+                        {signal: controller.signal});
                     setValue("name", result.data.name);
                     setValue("bikeCompanyType", result.data.bikeCompanyType);
                     setValue("countryCode", result.data.addressLocation.countryCode);
@@ -282,7 +282,7 @@ function MyAccount() {
             }
         } catch (e) {
             console.error(e);
-            setErrorMessage("Error editing your profile");
+            setErrorMessage("Error getting your profile");
             }
         }
         fetchUserData()
@@ -295,15 +295,13 @@ function MyAccount() {
     return (
         <>
             {successMessage
-                ?
-                <MessagePage
+                ? <MessagePage
                     title={successMessage}
                     text={`View your ${user.userRole === 'ROLE_BIKE_COMPANY' ? "Bike Rides" : "Bikes & Bike Rides"} on YouBike on `}
-                    linkUrlWithoutBase={(NavigationUrls.find((item) => item.id === 'User content page').url)}
+                    linkUrlWithoutBase={NavigationUrls.find((item) => item.id === 'User content page').url}
                     linkText={user.userRole === 'ROLE_BIKE_COMPANY' ? "My Bike Rides" : "My Bikes & Bike Rides"}
                 />
-                :
-                <FormPage
+                : <FormPage
                     handleSubmit={handleSubmit}
                     handleFormSubmit={handleFormSubmit}
                     pageTitle="Edit your YouBike profile"
