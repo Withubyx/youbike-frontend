@@ -36,7 +36,7 @@ function Input({ inputType, inputName, inputLabel, inputId, inputPlaceholder, in
                     {errors[inputName] && <p className="validation-message">{errors[inputName].message}</p>}
                 </>
             )}
-            {(inputType === 'text' || inputType === 'password') && (
+            {(inputType === 'text' || inputType === 'number' || inputType === 'password') && (
                 <>
                     <label htmlFor={inputId}>{inputLabel}</label>
                     <input
