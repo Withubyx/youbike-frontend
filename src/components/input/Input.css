@@ -36,10 +36,22 @@ input, select, textarea {
 }
 
 .radio-type-input {
-    margin-top: calc(2*var(--inverse-of-html-font-size-16)*1rem);
     accent-color: var(--color-text);
+    margin-top: calc(2*var(--inverse-of-html-font-size-16)*1rem);
     height: calc(16*var(--inverse-of-html-font-size-16)*1rem);
     width: fit-content;
+}
+
+.checkbox-type-input {
+    accent-color: var(--color-text);
+    margin-right: calc(3*var(--inverse-of-html-font-size-16)*1rem);
+    width: fit-content;
+    height: fit-content;
+}
+
+.checkbox-label {
+    margin-top: calc(2*var(--inverse-of-html-font-size-16)*1rem);
+    color: var(--color-placeholder-text);
 }
 
 input:focus {

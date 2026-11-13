@@ -36,7 +36,7 @@ function Input({ inputType, inputName, inputLabel, inputId, inputPlaceholder, in
                     {errors[inputName] && <p className="validation-message">{errors[inputName].message}</p>}
                 </>
             )}
-            {(inputType === 'text' || inputType === 'password') && (
+            {(inputType === 'text' || inputType === 'number' || inputType === 'password') && (
                 <>
                     <label htmlFor={inputId}>{inputLabel}</label>
                     <input
@@ -67,6 +67,34 @@ function Input({ inputType, inputName, inputLabel, inputId, inputPlaceholder, in
                         type={inputType}
                         id={inputId}
                         placeholder={inputPlaceholder}
+                        {...register(inputName, validationRules)}
+                    />
+                    {errors[inputName] && <p className="validation-message">{errors[inputName].message}</p>}
+                </>
+            )}
+            {inputType === 'checkbox' && (
+                <>
+                    <label htmlFor={inputId}>{inputLabel}</label>
+                    {inputOptions.map(option => (
+                        <label key={option.value} className="checkbox-label">
+                            <input
+                                className="checkbox-type-input"
+                                type="checkbox"
+                                value={option.value}
+                                {...register(inputName, validationRules)}
+                            />
+                            {option.label}
+                        </label>
+                    ))}
+                    {errors[inputName] && <p className="validation-message">{errors[inputName].message}</p>}
+                </>
+            )}
+            {inputType === 'datetime-local' && (
+                <>
+                    <label htmlFor={inputId}>{inputLabel}</label>
+                    <input
+                        id={inputId}
+                        type={inputType}
                         {...register(inputName, validationRules)}
                     />
                     {errors[inputName] && <p className="validation-message">{errors[inputName].message}</p>}

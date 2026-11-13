@@ -110,7 +110,7 @@ function CreateBike() {
 
     const buttonProps = {
         type: "submit",
-        name: "Add the Bike",
+        name: "Add Bike",
         variant: "button-main",
         disabled: loading,
     }

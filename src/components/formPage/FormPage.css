@@ -52,4 +52,8 @@ form textarea {
     form input, form select, form textarea {
         width: calc(300*var(--inverse-of-html-font-size-16)*1rem);
     }
+
+    form label, form legend {
+        margin-top: calc(12*var(--inverse-of-html-font-size-16)*1rem);
+    }
 }

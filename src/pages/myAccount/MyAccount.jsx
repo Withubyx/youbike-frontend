@@ -6,29 +6,11 @@ import {AuthContext} from "../../context/AuthContext.jsx";
 import {useForm} from "react-hook-form";
 import axios from "axios";
 import {youBikeApiBaseUrl} from "../../config/configuration.js";
+import {cityInputProps, countryInputProps, houseNumberInputProps, nameInputProps, streetInputProps} from "../../constants/inputProps.js";
 
 const inputPropsList = {
     bikeCompanyUser: [
-        {
-            inputId: "name",
-            inputType: "text",
-            inputName: "name",
-            inputLabel: "Name *",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Name is required."
-                },
-                minLength: {
-                    value: 2,
-                    message: "Name must be at least 2 characters long."
-                },
-                maxLength: {
-                    value: 20,
-                    message: "Name must be at most 20 characters long."
-                }
-            }
-        },
+        nameInputProps,
         {
             inputId: "companyType",
             inputType: "select",
@@ -46,138 +28,15 @@ const inputPropsList = {
                 }
             }
         },
-        {
-            inputId: "country",
-            inputType: "select",
-            inputName: "countryCode",
-            inputLabel: "Country *",
-            inputOptions: [
-                {value: "BE", label: "Belgium"},
-                {value: "DE", label: "Germany"},
-                {value: "NL", label: "Netherlands"},
-            ],
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Country is required."
-                }
-            }
-        },
-        {
-            inputId: "city",
-            inputType: "text",
-            inputName: "city",
-            inputLabel: "City *",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "City is required."
-                },
-                minLength: {
-                    value: 2,
-                    message: "City must be at least 2 characters long."
-                },
-                maxLength: {
-                    value: 20,
-                    message: "City must be at most 20 characters long."
-                }
-            }
-        },
-        {
-            inputId: "street",
-            inputType: "text",
-            inputName: "street",
-            inputLabel: "Street *",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Street is required."
-                },
-                minLength: {
-                    value: 2,
-                    message: "Street must be at least 2 characters long."
-                },
-                maxLength: {
-                    value: 30,
-                    message: "Street must be at most 30 characters long."
-                }
-            }
-        },
-        {
-            inputId: "houseNumber",
-            inputType: "text",
-            inputName: "houseNumber",
-            inputLabel: "House number *",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "House number is required."
-                },
-                maxLength: {
-                    value: 10,
-                    message: "House number must be at most 10 characters long."
-                }
-            }
-        },
+        countryInputProps,
+        cityInputProps,
+        streetInputProps,
+        houseNumberInputProps
     ],
     cyclistUser: [
-        {
-            inputId: "name",
-            inputType: "text",
-            inputName: "name",
-            inputLabel: "Name *",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Name is required."
-                },
-                minLength: {
-                    value: 2,
-                    message: "Name must be at least 2 characters long."
-                },
-                maxLength: {
-                    value: 20,
-                    message: "Name must be at most 20 characters long."
-                }
-            }
-        },
-        {
-            inputId: "country",
-            inputType: "select",
-            inputName: "countryCode",
-            inputLabel: "Country *",
-            inputOptions: [
-                {value: "BE", label: "Belgium"},
-                {value: "DE", label: "Germany"},
-                {value: "NL", label: "Netherlands"},
-            ],
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Country is required."
-                }
-            }
-        },
-        {
-            inputId: "city",
-            inputType: "text",
-            inputName: "city",
-            inputLabel: "City *",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "City is required."
-                },
-                minLength: {
-                    value: 2,
-                    message: "City must be at least 2 characters long."
-                },
-                maxLength: {
-                    value: 20,
-                    message: "City must be at most 20 characters long."
-                }
-            }
-        },
+        nameInputProps,
+        countryInputProps,
+        cityInputProps,
     ],
 }
 
@@ -261,6 +120,7 @@ function MyAccount() {
         const controller = new AbortController();
 
         async function fetchUserData() {
+            setErrorMessage("");
             try {
                 if (user.userRole === "ROLE_BIKE_COMPANY") {
                     const result = await axios.get(`${youBikeApiBaseUrl}/bike-companies/${user.id}`,

@@ -5,6 +5,7 @@ import axios from "axios";
 import {youBikeApiBaseUrl} from "../../config/configuration.js";
 import MessagePage from "../../components/messagePage/MessagePage.jsx";
 import navigationUrls from "../../constants/navigationUrls.js";
+import {cityInputProps, countryInputProps, emailInputProps, houseNumberInputProps, nameInputProps, passwordInputProps, streetInputProps} from "../../constants/inputProps.js";
 
 const inputPropsList = {
     bikeCompanyUser: [
@@ -18,27 +19,7 @@ const inputPropsList = {
                 {value: "BIKE COMPANY", label: "Bike Company"},
             ]
         },
-        {
-            inputId: "name",
-            inputType: "text",
-            inputName: "name",
-            inputLabel: "Name *",
-            inputPlaceholder: "?",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Name is required."
-                },
-                minLength: {
-                    value: 2,
-                    message: "Name must be at least 2 characters long."
-                },
-                maxLength: {
-                    value: 20,
-                    message: "Name must be at most 20 characters long."
-                }
-            }
-        },
+        nameInputProps,
         {
             inputId: "companyType",
             inputType: "select",
@@ -56,121 +37,17 @@ const inputPropsList = {
                 }
             }
         },
-        {
-            inputId: "country",
-            inputType: "select",
-            inputName: "countryCode",
-            inputLabel: "Country *",
-            inputOptions: [
-                {value: "BE", label: "Belgium"},
-                {value: "DE", label: "Germany"},
-                {value: "NL", label: "Netherlands"},
-            ],
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Country is required."
-                }
-            }
-        },
-        {
-            inputId: "city",
-            inputType: "text",
-            inputName: "city",
-            inputLabel: "City *",
-            inputPlaceholder: "?",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "City is required."
-                },
-                minLength: {
-                    value: 2,
-                    message: "City must be at least 2 characters long."
-                },
-                maxLength: {
-                    value: 20,
-                    message: "City must be at most 20 characters long."
-                }
-            }
-        },
-        {
-            inputId: "street",
-            inputType: "text",
-            inputName: "street",
-            inputLabel: "Street *",
-            inputPlaceholder: "?",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Street is required."
-                },
-                minLength: {
-                    value: 2,
-                    message: "Street must be at least 2 characters long."
-                },
-                maxLength: {
-                    value: 30,
-                    message: "Street must be at most 30 characters long."
-                }
-            }
-        },
-        {
-            inputId: "houseNumber",
-            inputType: "text",
-            inputName: "houseNumber",
-            inputLabel: "House number *",
-            inputPlaceholder: "?",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "House number is required."
-                },
-                maxLength: {
-                    value: 10,
-                    message: "House number must be at most 10 characters long."
-                }
-            }
-        },
-        {
-            inputId: "email-field",
-            inputType: "text",
-            inputName: "email",
-            inputLabel: "Email *",
-            inputPlaceholder: "?",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Email is required!"
-                },
-                maxLength: {
-                    value: 100,
-                    message: "Email must not exceed 100 characters."
-                },
-                validate: (value) => value.includes('@') || "This is not an email address.",
-            }
-        },
-        {
-            inputId: "password-field",
-            inputType: "password",
-            inputName: "password",
-            inputLabel: "Password *",
-            inputPlaceholder: "?",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Password is required!"
-                },
-                minLength: {
-                    value: 10,
-                    message: "Password must be at least 10 characters long."
-                },
-                maxLength: {
-                    value: 100,
-                    message: "Password must not exceed 100 characters."
-                }
-            }
-        },
+        countryInputProps,
+        {...cityInputProps,
+            inputPlaceholder: "?"},
+        {...streetInputProps,
+            inputPlaceholder: "?"},
+        {...houseNumberInputProps,
+            inputPlaceholder: "?"},
+        {...emailInputProps,
+            inputPlaceholder: "?"},
+        {...passwordInputProps,
+            inputPlaceholder: "?"}
     ],
     cyclistUser: [
         {
@@ -184,104 +61,15 @@ const inputPropsList = {
 
             ]
         },
-        {
-            inputId: "name",
-            inputType: "text",
-            inputName: "name",
-            inputLabel: "Name *",
-            inputPlaceholder: "?",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Name is required."
-                },
-                minLength: {
-                    value: 2,
-                    message: "Name must be at least 2 characters long."
-                },
-                maxLength: {
-                    value: 20,
-                    message: "Name must be at most 20 characters long."
-                }
-            }
-        },
-        {
-            inputId: "country",
-            inputType: "select",
-            inputName: "countryCode",
-            inputLabel: "Country *",
-            inputOptions: [
-                {value: "BE", label: "Belgium"},
-                {value: "DE", label: "Germany"},
-                {value: "NL", label: "Netherlands"},
-            ],
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Country is required."
-                }
-            }
-        },
-        {
-            inputId: "city",
-            inputType: "text",
-            inputName: "city",
-            inputLabel: "City *",
-            inputPlaceholder: "?",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "City is required."
-                },
-                minLength: {
-                    value: 2,
-                    message: "City must be at least 2 characters long."
-                },
-                maxLength: {
-                    value: 20,
-                    message: "City must be at most 20 characters long."
-                }
-            }
-        },
-        {
-            inputId: "email-field",
-            inputType: "text",
-            inputName: "email",
-            inputLabel: "Email *",
-            inputPlaceholder: "?",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Email is required!"
-                },
-                maxLength: {
-                    value: 100,
-                    message: "Email must not exceed 100 characters."
-                },
-                validate: (value) => value.includes('@') || "This is not an email address.",
-            }
-        },
-        {
-            inputId: "password-field",
-            inputType: "password",
-            inputName: "password",
-            inputLabel: "Password *",
-            inputPlaceholder: "?",
-            validationRules: {
-                required: {
-                    value: true,
-                    message: "Password is required!"
-                },
-                minLength: {
-                    value: 10,
-                    message: "Password must be at least 10 characters long."
-                },
-                maxLength: {
-                    value: 100,
-                    message: "Password must not exceed 100 characters."
-                }
-            }
-        },
+        {...nameInputProps,
+            inputPlaceholder: "?"},
+        countryInputProps,
+        {...cityInputProps,
+            inputPlaceholder: "?"},
+        {...emailInputProps,
+            inputPlaceholder: "?"},
+        {...passwordInputProps,
+            inputPlaceholder: "?"}
     ],
 }
 

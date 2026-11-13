@@ -132,6 +132,7 @@ function UpdateBike() {
         const controller = new AbortController();
 
         async function fetchBikeData() {
+            setErrorMessage("")
             try {
                 const result = await axios.get(`${youBikeApiBaseUrl}/bikes/${bikeId}`,
                     {signal: controller.signal});
