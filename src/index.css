@@ -62,6 +62,13 @@ h1 {
     font-weight: 600;
     font-style: normal;
     font-size: calc(36*var(--inverse-of-html-font-size-16)*1rem);
+    margin-top: calc(32*var(--inverse-of-html-font-size-16)*1rem);
+}
+
+h2 {
+    font-weight: 600;
+    font-size: calc(20*var(--inverse-of-html-font-size-16)*1rem);
+    margin-top: calc(25*var(--inverse-of-html-font-size-16)*1rem);
 }
 
 button {
@@ -73,6 +80,14 @@ button {
 
 .NavigationBar {
     display: block;
+}
+
+.error-message {
+    color: var(--color-error-message);
+    font-size: calc(17*var(--inverse-of-html-font-size-16)*1rem);
+    font-weight: 400;
+    font-style: italic;
+    margin-top: calc(22*var(--inverse-of-html-font-size-16)*1rem);
 }
 
 @media (max-width: 768px) {

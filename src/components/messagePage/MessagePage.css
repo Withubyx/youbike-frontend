@@ -5,10 +5,6 @@
     text-align: center;
 }
 
-.error-page h1{
-    margin-top: calc(32*var(--inverse-of-html-font-size-16)*1rem);
-}
-
 .error-page p{
     margin-top: calc(28*var(--inverse-of-html-font-size-16)*1rem);
 }

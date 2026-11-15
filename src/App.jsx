@@ -15,6 +15,7 @@ import {Routes, Route, Navigate} from "react-router-dom"
 import navigationUrls from "./constants/navigationUrls.js";
 import {AuthContext} from "./context/AuthContext.jsx";
 import {useContext} from "react";
+import Bikes from "./pages/bikes/Bikes.jsx";
 
 function App() {
     const {isAuth, user} = useContext(AuthContext);
@@ -24,6 +25,7 @@ function App() {
         <Header />
         <NavigationBar />
         <Routes>
+            <Route path={navigationUrls.find(url => url.id === 'Bikes').url} element={<Bikes />} />
             <Route
                 path={navigationUrls.find(url => url.id === 'Create Bike').url}
                 element={

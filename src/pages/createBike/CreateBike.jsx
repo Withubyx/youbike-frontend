@@ -5,6 +5,7 @@ import {youBikeApiBaseUrl} from "../../config/configuration.js";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import navigationUrls from "../../constants/navigationUrls.js";
+import bikeTypes from "../../constants/bikeTypes.js";
 
 const inputPropsList = [
     {
@@ -12,13 +13,7 @@ const inputPropsList = [
         inputType: "select",
         inputName: "bikeType",
         inputLabel: "Bike Type *",
-        inputOptions: [
-            {value: "RACE", label: "Race"},
-            {value: "CYCLOCROSS", label: "Cyclocross"},
-            {value: "GRAVEL", label: "Gravel"},
-            {value: "MTB", label: "MTB"},
-            {value: "OTHER", label: "Other"},
-        ],
+        inputOptions: bikeTypes,
         validationRules: {
             required: {
                 value: true,

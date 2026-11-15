@@ -10,9 +10,9 @@ function Header() {
                     <HamburgerMenu className="hamburger-menu" />
                 </div>
                 <div className="split-inner-container-youbike-logo-part">
-                    <span className="youbike-logo-wrapper">
+                    <div className="youbike-logo-wrapper">
                         <LogoYouBike className="youbike-logo" />
-                    </span>
+                    </div>
                 </div>
             </div>
         </header>
