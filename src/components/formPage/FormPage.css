@@ -40,14 +40,6 @@ form textarea {
     margin-bottom: calc(20*var(--inverse-of-html-font-size-16)*1rem);
 }
 
-.error-message {
-    color: var(--color-error-message);
-    font-size: calc(17*var(--inverse-of-html-font-size-16)*1rem);
-    font-weight: 400;
-    font-style: italic;
-    margin-top: calc(22*var(--inverse-of-html-font-size-16)*1rem);
-}
-
 @media screen and (max-width: 400px) {
     form input, form select, form textarea {
         width: calc(300*var(--inverse-of-html-font-size-16)*1rem);

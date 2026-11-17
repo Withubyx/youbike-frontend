@@ -15,7 +15,13 @@ main {
     justify-content: center;
 }
 
-.inner-container {
+.inner-container, .inner-container-center {
     flex-basis: 1400px;
     margin: 0 20px;
+}
+
+.inner-container-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

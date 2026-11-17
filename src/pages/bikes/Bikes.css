@@ -1,0 +1,100 @@
+@media screen and (min-width: 601px) {
+    .h1-wrapper, .h2-wrapper {
+        display: flex;
+        width: 100%;
+    }
+
+    .h1-wrapper-left-split, .h1-wrapper-right-split, .h2-wrapper-left-split, .h2-wrapper-right-split {
+        width: 50%
+    }
+
+    .h1-wrapper-right-split, .h2-wrapper-right-split {
+        position: relative;
+    }
+
+    .h1-element-wrapper, .h2-element-wrapper {
+        position: absolute;
+        display: flex;
+    }
+
+    .h1-element-wrapper {
+        left: calc(-112*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .h2-element-wrapper {
+        left: calc(-133*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .h1-button {
+        margin-top: calc(38*var(--inverse-of-html-font-size-16) * 1rem);
+        margin-left: calc(24*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .h2-button {
+        height: fit-content;
+        margin-top: calc(16*var(--inverse-of-html-font-size-16) * 1rem);
+        margin-left: calc(24*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .h2-text {
+        white-space: nowrap;
+    }
+
+    .select-button {
+        border: none;
+        color: var(--color-text);
+        background-color: var(--color-background-of-main-button);
+        font-weight: 600;
+        padding: calc(10 * var(--inverse-of-html-font-size-16) * 1rem) calc(16 * var(--inverse-of-html-font-size-16) * 1rem);
+        border-radius: 99px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
+    }
+
+    .select-button:hover {
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.40);
+    }
+
+    .bike-cards-container {
+        margin: 8px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .h1-button {
+        margin-top: calc(4*var(--inverse-of-html-font-size-16) * 1rem);
+        margin-left: calc(55*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .h2-button {
+        margin-left: calc(35*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .select-button {
+        margin-top: calc(16*var(--inverse-of-html-font-size-16) * 1rem);
+        border: none;
+        color: var(--color-text);
+        background-color: var(--color-background-of-main-button);
+        font-weight: 600;
+        padding: calc(12*var(--inverse-of-html-font-size-16) * 1rem) calc(16 * var(--inverse-of-html-font-size-16) * 1rem);
+        border-radius: 99px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
+    }
+
+    .select-button:hover {
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.40);
+    }
+
+    .bike-cards-container {
+        margin: 8px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
