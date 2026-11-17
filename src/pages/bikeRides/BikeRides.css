@@ -1,0 +1,35 @@
+@media screen and (min-width: 601px) {
+    .h1-wrapper-bike-rides-page {
+        display: flex;
+        width: 100%;
+    }
+
+    .h1-wrapper-left-split-bike-rides-page, .h1-wrapper-right-split-bike-rides-page {
+        width: 50%
+    }
+
+    .h1-wrapper-right-split-bike-rides-page {
+        position: relative;
+    }
+
+    .h1-element-wrapper-bike-rides-page {
+        position: absolute;
+        display: flex;
+    }
+
+    .h1-element-wrapper-bike-rides-page {
+        left: calc(-170 * var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .h1-button-bike-rides-page {
+        margin-top: calc(38 * var(--inverse-of-html-font-size-16) * 1rem);
+        margin-left: calc(24 * var(--inverse-of-html-font-size-16) * 1rem);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .h1-button-bike-rides-page {
+        margin-top: calc(4 * var(--inverse-of-html-font-size-16) * 1rem);
+        margin-left: calc(55 * var(--inverse-of-html-font-size-16) * 1rem);
+    }
+}

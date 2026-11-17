@@ -52,13 +52,13 @@ function Bikes() {
     return (
         <main className="outer-container">
             <div className="inner-container-center">
-                <div className="h1-wrapper">
-                    <div className="h1-wrapper-left-split">
+                <div className="h1-wrapper-bikes-page">
+                    <div className="h1-wrapper-left-split-bikes-page">
                     </div>
-                    <div className="h1-wrapper-right-split">
-                        <div className="h1-element-wrapper">
+                    <div className="h1-wrapper-right-split-bikes-page">
+                        <div className="h1-element-wrapper-bikes-page">
                             <h1>See all Bikes</h1>
-                            <div className="h1-button">
+                            <div className="h1-button-bikes-page">
                                 <Button
                                     type="button"
                                     name="Add a Bike"
@@ -69,15 +69,15 @@ function Bikes() {
                         </div>
                     </div>
                 </div>
-                <div className="h2-wrapper">
-                    <div className="h2-wrapper-left-split">
+                <div className="h2-wrapper-bikes-page">
+                    <div className="h2-wrapper-left-split-bikes-page">
                     </div>
-                    <div className="h2-wrapper-right-split">
-                        <div className="h2-element-wrapper">
-                            <h2 className="h2-text">Filter the Bikes by Bike type</h2>
-                            <div className="h2-button">
+                    <div className="h2-wrapper-right-split-bikes-page">
+                        <div className="h2-element-wrapper-bikes-page">
+                            <h2 className="h2-text-bikes-page">Filter the Bikes by Bike type</h2>
+                            <div className="h2-button-bikes-page">
                                 <select
-                                    className="select-button"
+                                    className="select-button-bikes-page"
                                     value={bikeType}
                                     onChange={(e) => setBikeType(e.target.value)}
                                 >
@@ -92,7 +92,7 @@ function Bikes() {
                         {errorMessage && <p className="error-message">{errorMessage}</p>}
                     </div>
                 </div>
-                <div className="bike-cards-container">
+                <div className="bike-cards-container-bikes-page">
                     {bikesShown.map((bike) => (
                         <BikeCard
                             key={bike.bike_id}

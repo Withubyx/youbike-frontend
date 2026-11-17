@@ -1,46 +1,46 @@
 @media screen and (min-width: 601px) {
-    .h1-wrapper, .h2-wrapper {
+    .h1-wrapper-bikes-page, .h2-wrapper-bikes-page {
         display: flex;
         width: 100%;
     }
 
-    .h1-wrapper-left-split, .h1-wrapper-right-split, .h2-wrapper-left-split, .h2-wrapper-right-split {
+    .h1-wrapper-left-split-bikes-page, .h1-wrapper-right-split-bikes-page, .h2-wrapper-left-split-bikes-page, .h2-wrapper-right-split-bikes-page {
         width: 50%
     }
 
-    .h1-wrapper-right-split, .h2-wrapper-right-split {
+    .h1-wrapper-right-split-bikes-page, .h2-wrapper-right-split-bikes-page {
         position: relative;
     }
 
-    .h1-element-wrapper, .h2-element-wrapper {
+    .h1-element-wrapper-bikes-page, .h2-element-wrapper-bikes-page {
         position: absolute;
         display: flex;
     }
 
-    .h1-element-wrapper {
+    .h1-element-wrapper-bikes-page {
         left: calc(-112*var(--inverse-of-html-font-size-16) * 1rem);
     }
 
-    .h2-element-wrapper {
+    .h2-element-wrapper-bikes-page {
         left: calc(-133*var(--inverse-of-html-font-size-16) * 1rem);
     }
 
-    .h1-button {
+    .h1-button-bikes-page {
         margin-top: calc(38*var(--inverse-of-html-font-size-16) * 1rem);
         margin-left: calc(24*var(--inverse-of-html-font-size-16) * 1rem);
     }
 
-    .h2-button {
+    .h2-button-bikes-page {
         height: fit-content;
         margin-top: calc(16*var(--inverse-of-html-font-size-16) * 1rem);
         margin-left: calc(24*var(--inverse-of-html-font-size-16) * 1rem);
     }
 
-    .h2-text {
+    .h2-text-bikes-page {
         white-space: nowrap;
     }
 
-    .select-button {
+    .select-button-bikes-page {
         border: none;
         color: var(--color-text);
         background-color: var(--color-background-of-main-button);
@@ -50,11 +50,11 @@
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
     }
 
-    .select-button:hover {
+    .select-button-bikes-page:hover {
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.40);
     }
 
-    .bike-cards-container {
+    .bike-cards-container-bikes-page {
         margin: 8px 0;
         width: 100%;
         display: flex;
@@ -65,16 +65,16 @@
 }
 
 @media screen and (max-width: 600px) {
-    .h1-button {
+    .h1-button-bikes-page {
         margin-top: calc(4*var(--inverse-of-html-font-size-16) * 1rem);
         margin-left: calc(55*var(--inverse-of-html-font-size-16) * 1rem);
     }
 
-    .h2-button {
+    .h2-button-bikes-page {
         margin-left: calc(35*var(--inverse-of-html-font-size-16) * 1rem);
     }
 
-    .select-button {
+    .select-button-bikes-page {
         margin-top: calc(16*var(--inverse-of-html-font-size-16) * 1rem);
         border: none;
         color: var(--color-text);
@@ -85,11 +85,11 @@
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
     }
 
-    .select-button:hover {
+    .select-button-bikes-page:hover {
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.40);
     }
 
-    .bike-cards-container {
+    .bike-cards-container-bikes-page {
         margin: 8px 0;
         width: 100%;
         display: flex;
