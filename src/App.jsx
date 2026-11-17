@@ -1,5 +1,6 @@
 import Header from "./components/header/Header.jsx";
 import NavigationBar from "./components/navigationBar/NavigationBar.jsx";
+import Bikes from "./pages/bikes/Bikes.jsx";
 import CreateBike from "./pages/createBike/CreateBike.jsx";
 import UpdateBike from "./pages/updateBike/UpdateBike.jsx";
 import CreateBikeRide from "./pages/createBikeRide/CreateBikeRide.jsx";
@@ -15,7 +16,6 @@ import {Routes, Route, Navigate} from "react-router-dom"
 import navigationUrls from "./constants/navigationUrls.js";
 import {AuthContext} from "./context/AuthContext.jsx";
 import {useContext} from "react";
-import Bikes from "./pages/bikes/Bikes.jsx";
 
 function App() {
     const {isAuth, user} = useContext(AuthContext);
@@ -41,6 +41,7 @@ function App() {
                         : <Navigate to={navigationUrls.find(url => url.id === 'Sign In').url} />
                 }
             />
+
             <Route
                 path={navigationUrls.find(url => url.id === 'Update Bike').url}
                 element={

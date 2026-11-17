@@ -45,13 +45,22 @@
         color: var(--color-text);
         background-color: var(--color-background-of-main-button);
         font-weight: 600;
-        padding: calc(12 * var(--inverse-of-html-font-size-16) * 1rem) calc(16 * var(--inverse-of-html-font-size-16) * 1rem);
+        padding: calc(10 * var(--inverse-of-html-font-size-16) * 1rem) calc(16 * var(--inverse-of-html-font-size-16) * 1rem);
         border-radius: 99px;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
     }
 
     .select-button:hover {
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.40);
+    }
+
+    .bike-cards-container {
+        margin: 8px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
 
@@ -78,5 +87,14 @@
 
     .select-button:hover {
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.40);
+    }
+
+    .bike-cards-container {
+        margin: 8px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }

@@ -6,7 +6,7 @@
     --color-input-label-text: rgba(64, 64, 64, 0.90);
     --color-placeholder-text: rgba(73, 73, 73, 0.50);
     --color-background-of-main: #FDFDFD;
-    --color-border-of-header-footer: #0D0D0D54;
+    --color-border: #0D0D0D54;
     --color-background-of-header-footer: #F9F9F9;
     --color-error-message: red;
     --color-success-message: green;
@@ -19,6 +19,8 @@
 
     --color-background-of-active-navigation-bar-button: #FFD100;
     --color-background-of-main-button: #FFF0AA;
+
+    --color-background-of-bike-card: #BEEAD0;
 
     /* The value below is used for converting css values in this project.
     These css values are sizes based on html font-size 16 design. When these css values are multiplied with the value below

@@ -1,7 +1,7 @@
 
 .footer {
     height: calc(100*var(--inverse-of-html-font-size-16)*1rem);
-    border-top: 1px solid var(--color-border-of-header-footer);
+    border-top: 1px solid var(--color-border);
     background-color: var(--color-background-of-header-footer);
 }
 

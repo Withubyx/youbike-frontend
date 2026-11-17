@@ -6,6 +6,7 @@ import bikeTypes from "../../constants/bikeTypes.js";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {youBikeApiBaseUrl} from "../../config/configuration.js";
+import BikeCard from "../../components/bikeCard/BikeCard.jsx";
 
 const selectBikeTypes = [
     {value: "", label: "No Filter Selected"},
@@ -18,6 +19,15 @@ function Bikes() {
     const [bikes, setBikes] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
 
+    let bikesShown;
+    switch (bikeType) {
+        case "":
+            bikesShown = bikes;
+            break;
+        default:
+            bikesShown = (bikes.filter(bike => bike.bikeType === bikeType));
+    }
+
     useEffect(() => {
         const controller = new AbortController();
 
@@ -29,7 +39,7 @@ function Bikes() {
                 setBikes(result.data);
         } catch (e) {
                 console.error(e);
-                setErrorMessage("Error getting bike data")
+                setErrorMessage("Error getting bike data");
             }
         }
         fetchBikeData();
@@ -81,6 +91,18 @@ function Bikes() {
                         </div>
                         {errorMessage && <p className="error-message">{errorMessage}</p>}
                     </div>
+                </div>
+                <div className="bike-cards-container">
+                    {bikesShown.map((bike) => (
+                        <BikeCard
+                            key={bike.bike_id}
+                            bikeId={bike.bike_id}
+                            bikeImage={bike.bikeImage.uri}
+                            brand={bike.brand}
+                            model={bike.model}
+                            owner={bike.ownerName}
+                        />
+                    ))}
                 </div>
             </div>
         </main>

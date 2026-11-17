@@ -61,6 +61,7 @@ function Navigation({ classNameList, closeHamburgerMenu }) {
             <li key={item.id}>
                 <NavLink
                     to={(navigationUrls.find((url)=> url.id === item.id)).url}
+                    end
                     onClick={closeHamburgerMenu}
                     className={({ isActive }) => isActive ? `active-link` : 'default-link'}
                 >
