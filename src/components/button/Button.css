@@ -3,9 +3,24 @@
     padding: calc(12 * var(--inverse-of-html-font-size-16) * 1rem) calc(16 * var(--inverse-of-html-font-size-16) * 1rem);
     border-radius: 99px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
-    background: var(--color-background-of-main-button);
+    background: var(--color-yellow-light);
 }
 
 .button-main:hover {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.40);
 }
+
+.button-table-header {
+    font-weight: 600;
+    height: 100%;
+}
+
+.button-table-data-cell {
+    height: 100%;
+}
+
+.button-table-header:hover, .button-table-data-cell:hover {
+    cursor: pointer;
+}
+
+
