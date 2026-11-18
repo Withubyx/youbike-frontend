@@ -25,7 +25,7 @@ function Bikes() {
             bikesShown = bikes;
             break;
         default:
-            bikesShown = (bikes.filter(bike => bike.bikeType === bikeType));
+            bikesShown = bikes.filter(bike => bike.bikeType === bikeType);
     }
 
     useEffect(() => {

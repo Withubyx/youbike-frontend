@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
+    --color-green: rgba(59, 190, 112, 1.00);
+    --color-green-light: #BEEAD0;
+    --color-yellow: #FFD100;
+    --color-yellow-light: #FFF0AA;
+
+    --color-main: rgba(253, 253, 253, 0.2);
     --color-text: #0D0D0D;
     --color-input-label-text: rgba(64, 64, 64, 0.90);
     --color-placeholder-text: rgba(73, 73, 73, 0.50);
@@ -12,15 +18,9 @@
     --color-success-message: green;
 
     --color-border-of-input-field: rgba(212, 212, 212, 1.00);
-    --color-border-of-input-field-in-focus: rgba(59, 190, 112, 1.00);
     --color-border-of-input-field-shadow: rgba(212, 212, 212, 0.20);
     --color-border-of-input-field-shadow-in-focus: rgba(59, 190, 112, 0.20);
     --color-background-of-input-field: #FFFFFF;
-
-    --color-background-of-active-navigation-bar-button: #FFD100;
-    --color-background-of-main-button: #FFF0AA;
-
-    --color-background-of-bike-card: #BEEAD0;
 
     /* The value below is used for converting css values in this project.
     These css values are sizes based on html font-size 16 design. When these css values are multiplied with the value below
@@ -57,6 +57,10 @@ body {
     font-size: calc(16*var(--inverse-of-html-font-size-16)*1rem);
     font-weight: 400;
     color: var(--color-text);
+}
+
+main {
+    background-color: var(--color-main);
 }
 
 h1 {

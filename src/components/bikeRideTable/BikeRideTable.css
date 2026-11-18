@@ -1,0 +1,66 @@
+.bike-ride-table {
+    border: 1px solid var(--color-text);
+    border-collapse: collapse;
+}
+
+.header-cell {
+    padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
+    border: 1px solid var(--color-text);
+    width: calc(280*var(--inverse-of-html-font-size-16) * 1rem);
+    height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
+    background-color: var(--color-yellow-light);
+}
+
+.data-cell {
+    padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
+    border-bottom: 1px solid var(--color-border);
+    height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
+    background-color: var(--color-green-light)
+}
+
+.sorted-header-cell {
+    padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
+    border: 1px solid var(--color-text);
+    width: calc(280*var(--inverse-of-html-font-size-16) * 1rem);
+    height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
+    background-color: var(--color-yellow);
+}
+
+.sorted-data-cell {
+    padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
+    border-bottom: 1px solid var(--color-border);
+    height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
+    background-color: var(--color-green);
+}
+
+.hover-bike-ride-table:hover {
+    filter: brightness(92%);
+}
+
+.data-cell-flex-box {
+    display: flex;
+}
+
+@media screen and (max-width: 1440px) {
+    .speed-column {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    .distance-column {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .city-column {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .start-date-time-column {
+        display: none;
+    }
+}

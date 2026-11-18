@@ -5,12 +5,33 @@ import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {youBikeApiBaseUrl} from "../../config/configuration.js";
+import BikeRideTable from "../../components/bikeRideTable/BikeRideTable.jsx";
 
 function BikeRides() {
     const navigate = useNavigate();
-    // const [sortBy, setSortBy] = useState("");
+    const [sortBy, setSortBy] = useState("startDateTime");
     const [bikeRides, setBikeRides] = useState([]);
-    const [errorMessage, setErrorMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("")
+
+    let bikeRidesShown;
+    switch (sortBy) {
+        case "startDateTime":
+            bikeRidesShown = bikeRides
+            break;
+        case "city":
+            bikeRidesShown = bikeRides.toSorted((a, b) => a.addressLocation.city.localeCompare(b.addressLocation.city));
+            break;
+        case "distance":
+            bikeRidesShown = bikeRides.toSorted((a, b) => a.distance - b.distance);
+            break;
+        case "speed":
+            bikeRidesShown = bikeRides.toSorted((a, b) => transformSpeedValue(a.speed).localeCompare(transformSpeedValue(b.speed)));
+            break;
+    }
+
+    function transformSpeedValue(speedEnum) {
+        return speedEnum.substring(4,6)
+    }
 
     useEffect(() => {
         const controller = new AbortController();
@@ -53,6 +74,13 @@ function BikeRides() {
                         </div>
                         {errorMessage && <p className="error-message">{errorMessage}</p>}
                     </div>
+                </div>
+                <div className="bike-rides-table-bike-rides-page">
+                    <BikeRideTable
+                        bikeRides={bikeRidesShown}
+                        sortBy={sortBy}
+                        setSortBy={setSortBy}
+                    />
                 </div>
             </div>
         </main>
