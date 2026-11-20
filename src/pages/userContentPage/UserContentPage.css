@@ -1,0 +1,109 @@
+.h2-container-user-content-page {
+    display: flex;
+    width: 100%;
+}
+
+.h2-container-left-split-user-content-page, .h2-container-right-split-user-content-page {
+    width: 50%
+}
+
+.h2-container-right-split-user-content-page {
+    position: relative;
+}
+
+.h2-first-element-wrapper-user-content-page {
+    position: absolute;
+    display: flex;
+    left: calc(-51*var(--inverse-of-html-font-size-16) * 1rem);
+}
+
+.h2-second-element-wrapper-user-content-page {
+    position: absolute;
+    display: flex;
+    left: calc(-75*var(--inverse-of-html-font-size-16) * 1rem);
+}
+
+.h2-first-button-user-content-page {
+    margin-top: calc(14*var(--inverse-of-html-font-size-16) * 1rem);
+    margin-left: calc(24*var(--inverse-of-html-font-size-16) * 1rem);
+}
+
+.h2-second-button-user-content-page {
+    margin-top: calc(16*var(--inverse-of-html-font-size-16) * 1rem);
+    margin-left: calc(24*var(--inverse-of-html-font-size-16) * 1rem);
+    margin-bottom: calc(14 * var(--inverse-of-html-font-size-16) * 1rem);
+}
+
+.h2-text-user-content-page {
+    white-space: nowrap;
+}
+
+.bike-cards-container-user-content-page {
+    margin: calc(14 * var(--inverse-of-html-font-size-16) * 1rem) 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: calc(12*var(--inverse-of-html-font-size-16) * 1rem)
+}
+
+.bike-rides-table-user-content-page {
+    width: 100%;
+    margin-bottom: calc(16*var(--inverse-of-html-font-size-16) * 1rem);
+}
+
+@media screen and (max-width: 450px) {
+    .h2-first-element-wrapper-user-content-page {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: calc(-51*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .h2-second-element-wrapper-user-content-page {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: calc(-75*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .h2-first-button-user-content-page {
+        margin-top: calc(14*var(--inverse-of-html-font-size-16) * 1rem);
+        margin-left: calc(-5*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .h2-second-button-user-content-page {
+        margin-top: calc(14*var(--inverse-of-html-font-size-16) * 1rem);
+        margin-left: calc(-2*var(--inverse-of-html-font-size-16) * 1rem);
+        margin-bottom: calc(14 * var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .h1-text-user-content-page {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .h2-text-user-content-page {
+        margin-top: calc(60*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .first-info-message-user-content-page {
+        position: absolute;
+        margin-left: calc(-80*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .second-info-message-user-content-page {
+        position: absolute;
+        margin-left: calc(-95*var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .h2-second-button-user-content-page {
+        margin-bottom: calc(0 * var(--inverse-of-html-font-size-16) * 1rem);
+    }
+
+    .bike-rides-table-user-content-page {
+        width: 100%;
+        margin: 16px 0;
+    }
+}

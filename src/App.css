@@ -18,6 +18,7 @@ main {
 .inner-container, .inner-container-center {
     flex-basis: 1400px;
     margin: 0 20px;
+    min-width: 0;
 }
 
 .inner-container-center {

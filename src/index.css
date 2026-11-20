@@ -16,6 +16,8 @@
     --color-background-of-header-footer: #F9F9F9;
     --color-error-message: red;
     --color-success-message: green;
+    --color-info-message: blue;
+    --color-button-delete: #FFAAAA;
 
     --color-border-of-input-field: rgba(212, 212, 212, 1.00);
     --color-border-of-input-field-shadow: rgba(212, 212, 212, 0.20);
@@ -86,6 +88,14 @@ button {
 
 .NavigationBar {
     display: block;
+}
+
+.info-message {
+    color: var(--color-info-message);
+    font-size: calc(17*var(--inverse-of-html-font-size-16)*1rem);
+    font-weight: 400;
+    margin-top: calc(22*var(--inverse-of-html-font-size-16)*1rem);
+    white-space: nowrap;
 }
 
 .error-message {

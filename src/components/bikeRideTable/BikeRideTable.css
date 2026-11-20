@@ -1,66 +1,156 @@
 .bike-ride-table {
     border: 1px solid var(--color-text);
     border-collapse: collapse;
+    width: 100%;
+}
+
+.bike-ride-table tr {
+    display: flex;
+    width: 100%;
+}
+
+.bike-ride-table th, .bike-ride-table td {
+    min-width: 0;
+}
+
+.title-column, .start-date-time-column, .city-column, .distance-column, .speed-column {
+    flex-basis: calc(280*var(--inverse-of-html-font-size-16) * 1rem);
+}
+
+.bike-rides-table-user-content-page .title-column,
+.bike-rides-table-user-content-page .start-date-time-column,
+.bike-rides-table-user-content-page .city-column,
+.bike-rides-table-user-content-page .distance-column,
+.bike-rides-table-user-content-page .speed-column {
+    flex-basis: calc(220*var(--inverse-of-html-font-size-16) * 1rem);
+}
+
+.delete-column, .edit-column {
+    flex-basis: calc(150*var(--inverse-of-html-font-size-16) * 1rem);
+}
+
+.title-column, .start-date-time-column {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.city-column {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.distance-column, .speed-column {
+    flex-grow: 1;
+    flex-shrink: 4;
+}
+
+.delete-column, .edit-column {
+    flex-grow: 1;
+    flex-shrink: 0;
 }
 
 .header-cell {
+    display: flex;
+    align-items: center;
     padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
     border: 1px solid var(--color-text);
-    width: calc(280*var(--inverse-of-html-font-size-16) * 1rem);
     height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
     background-color: var(--color-yellow-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .data-cell {
+    display: flex;
+    align-items: center;
     padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
     border-bottom: 1px solid var(--color-border);
     height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
-    background-color: var(--color-green-light)
+    background-color: var(--color-green-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .sorted-header-cell {
+    display: flex;
+    align-items: center;
     padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
     border: 1px solid var(--color-text);
-    width: calc(280*var(--inverse-of-html-font-size-16) * 1rem);
     height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
     background-color: var(--color-yellow);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .sorted-data-cell {
+    display: flex;
+    align-items: center;
     padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
     border-bottom: 1px solid var(--color-border);
     height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
     background-color: var(--color-green);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .hover-bike-ride-table:hover {
     filter: brightness(92%);
 }
 
-.data-cell-flex-box {
-    display: flex;
-}
+@media screen and (max-width: 1360px) {
+    .delete-column {
+        flex-basis: 80px;
+    }
 
-@media screen and (max-width: 1440px) {
+    .edit-column {
+        flex-basis: 60px;
+    }
+
     .speed-column {
         display: none;
     }
 }
 
-@media screen and (max-width: 1170px) {
+@media screen and (max-width: 1310px) {
     .distance-column {
         display: none;
     }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1250px) {
     .city-column {
         display: none;
     }
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 870px) {
     .start-date-time-column {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 605px) {
+    .title-column {
+        width: 80px;
+    }
+
+    .bike-ride-table {
+        border: none;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .delete-column {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .edit-column {
         display: none;
     }
 }
