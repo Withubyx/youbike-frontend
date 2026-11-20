@@ -1,12 +1,18 @@
-.button-main {
+.button-main, .button-main-delete {
     font-weight: 500;
     padding: calc(12 * var(--inverse-of-html-font-size-16) * 1rem) calc(16 * var(--inverse-of-html-font-size-16) * 1rem);
     border-radius: 99px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
     background: var(--color-yellow-light);
+    width: fit-content;
+    white-space: nowrap;
 }
 
-.button-main:hover {
+.button-main-delete {
+    background: var(--color-button-delete);
+}
+
+.button-main:hover, .button-main-delete:hover {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.40);
 }
 
@@ -22,5 +28,18 @@
 .button-table-header:hover, .button-table-data-cell:hover {
     cursor: pointer;
 }
+
+.button-table-data-cell-edit, .button-table-data-cell-delete {
+    padding: calc(3 * var(--inverse-of-html-font-size-16) * 1rem) calc(9 * var(--inverse-of-html-font-size-16) * 1rem);
+    border-radius: 99px;
+    background: var(--color-yellow-light);
+    margin-left: calc(30 * var(--inverse-of-html-font-size-16) * 1rem);
+}
+
+.button-table-data-cell-delete {
+    background: var(--color-button-delete);
+}
+
+
 
 

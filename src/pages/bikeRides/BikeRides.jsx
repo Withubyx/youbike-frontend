@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {youBikeApiBaseUrl} from "../../config/configuration.js";
 import BikeRideTable from "../../components/bikeRideTable/BikeRideTable.jsx";
+import {sortBikeRides} from "../../helpers/sorting.js";
 
 function BikeRides() {
     const navigate = useNavigate();
@@ -13,25 +14,7 @@ function BikeRides() {
     const [bikeRides, setBikeRides] = useState([]);
     const [errorMessage, setErrorMessage] = useState("")
 
-    let bikeRidesShown;
-    switch (sortBy) {
-        case "startDateTime":
-            bikeRidesShown = bikeRides
-            break;
-        case "city":
-            bikeRidesShown = bikeRides.toSorted((a, b) => a.addressLocation.city.localeCompare(b.addressLocation.city));
-            break;
-        case "distance":
-            bikeRidesShown = bikeRides.toSorted((a, b) => a.distance - b.distance);
-            break;
-        case "speed":
-            bikeRidesShown = bikeRides.toSorted((a, b) => transformSpeedValue(a.speed).localeCompare(transformSpeedValue(b.speed)));
-            break;
-    }
-
-    function transformSpeedValue(speedEnum) {
-        return speedEnum.substring(4,6)
-    }
+    const bikeRidesShown = sortBikeRides(bikeRides, sortBy);
 
     useEffect(() => {
         const controller = new AbortController();
@@ -57,10 +40,10 @@ function BikeRides() {
     return (
         <main className="outer-container">
             <div className="inner-container-center">
-                <div className="h1-wrapper-bike-rides-page">
-                    <div className="h1-wrapper-left-split-bike-rides-page">
+                <div className="h1-container-bike-rides-page">
+                    <div className="h1-container-left-split-bike-rides-page">
                     </div>
-                    <div className="h1-wrapper-right-split-bike-rides-page">
+                    <div className="h1-container-right-split-bike-rides-page">
                         <div className="h1-element-wrapper-bike-rides-page">
                             <h1>Let's Ride Together</h1>
                             <div className="h1-button-bike-rides-page">

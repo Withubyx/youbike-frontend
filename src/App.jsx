@@ -6,6 +6,7 @@ import UpdateBike from "./pages/updateBike/UpdateBike.jsx";
 import BikeRides from "./pages/bikeRides/BikeRides.jsx";
 import CreateBikeRide from "./pages/createBikeRide/CreateBikeRide.jsx";
 import UpdateBikeRide from "./pages/updateBikeRide/UpdateBikeRide.jsx";
+import UserContentPage from "./pages/userContentPage/UserContentPage.jsx";
 import SignIn from "./pages/signIn/SignIn.jsx";
 import CreateFreeAccount from "./pages/createFreeAccount/CreateFreeAccount.jsx";
 import MyAccount from "./pages/myAccount/MyAccount.jsx";
@@ -74,6 +75,16 @@ function App() {
                         : <Navigate to={navigationUrls.find(url => url.id === 'Sign In').url} />
                 }
             />
+
+            <Route
+                path={navigationUrls.find(url => url.id === 'User content page').url}
+                element={
+                    isAuth === true
+                        ? <UserContentPage />
+                        : <Navigate to={navigationUrls.find(url => url.id === 'Sign In').url} />
+                }
+            />
+
             <Route
                 path={navigationUrls.find(url => url.id === 'Sign In').url}
                 element={

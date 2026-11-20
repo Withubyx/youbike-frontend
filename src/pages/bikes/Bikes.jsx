@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {youBikeApiBaseUrl} from "../../config/configuration.js";
 import BikeCard from "../../components/bikeCard/BikeCard.jsx";
+import {sortBikes} from "../../helpers/sorting.js";
 
 const selectBikeTypes = [
     {value: "", label: "No Filter Selected"},
@@ -19,14 +20,7 @@ function Bikes() {
     const [bikes, setBikes] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
 
-    let bikesShown;
-    switch (bikeType) {
-        case "":
-            bikesShown = bikes;
-            break;
-        default:
-            bikesShown = bikes.filter(bike => bike.bikeType === bikeType);
-    }
+    const bikesShown = sortBikes(bikes, bikeType);
 
     useEffect(() => {
         const controller = new AbortController();
@@ -52,10 +46,10 @@ function Bikes() {
     return (
         <main className="outer-container">
             <div className="inner-container-center">
-                <div className="h1-wrapper-bikes-page">
-                    <div className="h1-wrapper-left-split-bikes-page">
+                <div className="h1-container-bikes-page">
+                    <div className="h1-container-left-split-bikes-page">
                     </div>
-                    <div className="h1-wrapper-right-split-bikes-page">
+                    <div className="h1-container-right-split-bikes-page">
                         <div className="h1-element-wrapper-bikes-page">
                             <h1>See all Bikes</h1>
                             <div className="h1-button-bikes-page">
@@ -69,10 +63,10 @@ function Bikes() {
                         </div>
                     </div>
                 </div>
-                <div className="h2-wrapper-bikes-page">
-                    <div className="h2-wrapper-left-split-bikes-page">
+                <div className="h2-container-bikes-page">
+                    <div className="h2-container-left-split-bikes-page">
                     </div>
-                    <div className="h2-wrapper-right-split-bikes-page">
+                    <div className="h2-container-right-split-bikes-page">
                         <div className="h2-element-wrapper-bikes-page">
                             <h2 className="h2-text-bikes-page">Filter the Bikes by Bike type</h2>
                             <div className="h2-button-bikes-page">
