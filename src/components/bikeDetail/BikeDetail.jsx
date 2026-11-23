@@ -22,11 +22,16 @@ function BikeDetail(
     const {register, handleSubmit, reset, formState: {errors}} = useForm({mode: "onChange"});
     const navigate = useNavigate();
     const [comments, setComments] = useState([]);
-    const [fetchCommentsAfterPost, toggleFetchCommentsAfterPost] = useState(false);
+    const [fetchComments, toggleFetchComments] = useState(false);
     const [commentSection, toggleCommentSection] = useState(false);
-    const [disableCommentButton, toggleDisableCommentButton] = useState(false);
-    const [errorGettingCommentsMessage, setErrorGettingCommentsMessage] = useState("");
-    const [errorPostingCommentMessage, setErrorPostingCommentMessage] = useState("");
+    const [commentSectionCyclistRestricted, setCommentSectionCyclistRestricted] = useState("");
+    const [disablePostCommentButton, toggleDisablePostCommentButton] = useState(false);
+    const [disableEditCommentButton, toggleDisableEditCommentButton] = useState(false);
+    const [disableDeleteCommentButton, toggleDisableDeleteCommentButton] = useState(false);
+    const [errorGetCommentsMessage, setErrorGetCommentsMessage] = useState("");
+    const [errorPostCommentMessage, setErrorPostCommentMessage] = useState("");
+    const [errorEditCommentMessage, setErrorEditCommentMessage] = useState("");
+    const [errorDeleteCommentMessage, setErrorDeleteCommentMessage] = useState("");
 
     const token = localStorage.getItem("token");
 
@@ -34,14 +39,14 @@ function BikeDetail(
         const controller = new AbortController();
 
         async function fetchBikeCommentsData() {
-            setErrorGettingCommentsMessage("")
+            setErrorGetCommentsMessage("")
             try {
                 const result = await axios.get(`${youBikeApiBaseUrl}/bike-comments/bikes/${bike.bike_id}`,
                     {signal: controller.signal});
                 setComments(result.data);
             } catch (e) {
                 console.error(e);
-                setErrorGettingCommentsMessage("Error getting bike comments data");
+                setErrorGetCommentsMessage("Error getting bike comments data");
             }
         }
         fetchBikeCommentsData()
@@ -49,12 +54,12 @@ function BikeDetail(
         return function cleanup() {
             controller.abort();
         }
-    }, [bike.bike_id, fetchCommentsAfterPost])
+    }, [bike.bike_id, fetchComments])
 
 
-    async function handleFormSubmit(data) {
-        setErrorPostingCommentMessage("");
-        toggleDisableCommentButton(true);
+    async function handlePostFormSubmit(data) {
+        setErrorPostCommentMessage("");
+        toggleDisablePostCommentButton(true);
         try {
             await axios.post(`${youBikeApiBaseUrl}/bike-comments/bikes/${bike.bike_id}`,
                 {
@@ -69,12 +74,56 @@ function BikeDetail(
             );
             reset();
             toggleCommentSection(false);
-            toggleFetchCommentsAfterPost(!fetchCommentsAfterPost);
+            toggleFetchComments(!fetchComments);
         } catch (e) {
             console.error(e);
-            setErrorPostingCommentMessage("Error posting bike comment data");
+            setErrorPostCommentMessage("Error posting bike comment data");
         } finally {
-            toggleDisableCommentButton(false);
+            toggleDisablePostCommentButton(false);
+        }
+    }
+
+    async function editBikeComment(commentId, data) {
+        toggleDisableEditCommentButton(true)
+        setErrorEditCommentMessage("")
+        try {
+            await axios.put(`${youBikeApiBaseUrl}/bike-comments/${commentId}`,
+                {
+                    comment: data.comment
+                },
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    }
+                }
+            );
+            toggleFetchComments(!fetchComments);
+        } catch (e) {
+            console.error(e);
+            setErrorEditCommentMessage("Error editing bike comment data");
+        } finally {
+            toggleDisableEditCommentButton(false)
+        }
+    }
+
+    async function deleteBikeComment(commentId) {
+        toggleDisableDeleteCommentButton(true);
+        setErrorDeleteCommentMessage("");
+        try {
+            await axios.delete(`${youBikeApiBaseUrl}/bike-comments/${commentId}`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    }
+                }
+            );
+            toggleFetchComments(!fetchComments);
+        } catch (e) {
+            console.error(e);
+            setErrorDeleteCommentMessage("Error deleting bike comment data");
+        } finally {
+            toggleDisableDeleteCommentButton(false);
         }
     }
 
@@ -88,25 +137,29 @@ function BikeDetail(
         <article className="bike-detail">
             {forHomePage && (
                 <div>
-                    <h2>Random Bike</h2>
-                    <Button
-                        type="button"
-                        name="Next Random Bike"
-                        variant="button-main"
-                        onClick={() => processNextRandomBike()}
-                    />
-                    <Button
-                        type="button"
-                        name="Download Bike Image"
-                        variant="button-main"
-                        onClick={() => downloadBikeImageFunction()}
-                        disabled={disableDownloadBikeImageButton}
-                    />
+                    <div>
+                        <h2>Random Bike</h2>
+                        <Button
+                            type="button"
+                            name="Next Random Bike"
+                            variant="button-main"
+                            onClick={() => processNextRandomBike()}
+                        />
+                        {errorMessageNextRandomBike && <p className="error-message">{errorMessageNextRandomBike}</p>}
+                    </div>
+                    <div>
+                        <Button
+                            type="button"
+                            name="Download Bike Image"
+                            variant="button-main"
+                            onClick={() => downloadBikeImageFunction()}
+                            disabled={disableDownloadBikeImageButton}
+                        />
+                        {errorMessageDownloadBikeImage && <p className="error-message">{errorMessageDownloadBikeImage}</p>}
+                    </div>
                 </div>
             )}
             <div className="bike-detail-container">
-                {errorMessageNextRandomBike && <p className="error-message">{errorMessageNextRandomBike}</p>}
-                {errorMessageDownloadBikeImage && <p className="error-message">{errorMessageDownloadBikeImage}</p>}
                 <img className="bike-image" src={bikeImage} alt="bike image" />
                 <p><span>Brand: </span>{bike.brand}</p>
                 <p><span>Model: </span>{bike.model}</p>
@@ -118,14 +171,16 @@ function BikeDetail(
                         type="button"
                         name="Add Comment"
                         variant="button-main"
-                        onClick={() => {user !== null
-                            ? toggleCommentSection(true)
-                            : navigate(`/sign-in`)}
+                        onClick={() => user !== null
+                            ? user.userRole === "ROLE_CYCLIST"
+                                ? toggleCommentSection(true)
+                                : setCommentSectionCyclistRestricted("Only Cyclists can place a comment")
+                            : navigate(`/sign-in`)
                         }
-                        disabled={disableCommentButton}
+                        disabled={disablePostCommentButton}
                     />
                     {commentSection && (
-                        <form onSubmit={handleSubmit(handleFormSubmit)} className="comment-form-bike-detail">
+                        <form onSubmit={handleSubmit(handlePostFormSubmit)} className="comment-form-bike-detail">
                             <label htmlFor="user-comment">Share your thoughts about this bike
                                 <textarea
                                     id="user-comment"
@@ -147,19 +202,32 @@ function BikeDetail(
                                 type="submit"
                                 name="Post comment"
                                 variant="button-main"
-                                disabled={disableCommentButton}
+                                disabled={disablePostCommentButton}
                             />
                         </form>
                     )}
                 </div>
-                {errorGettingCommentsMessage && <p className="error-message">{errorGettingCommentsMessage}</p>}
-                {errorPostingCommentMessage && <p className="error-message">{errorPostingCommentMessage}</p>}
+                {commentSectionCyclistRestricted && <p className="info-message info-message-home-page">{commentSectionCyclistRestricted}</p>}
+                {errorGetCommentsMessage && <p className="error-message">{errorGetCommentsMessage}</p>}
+                {errorPostCommentMessage && <p className="error-message">{errorPostCommentMessage}</p>}
+                {errorEditCommentMessage && <p className="error-message">{errorEditCommentMessage}</p>}
+                {errorDeleteCommentMessage && <p className="error-message">{errorDeleteCommentMessage}</p>}
                 {comments.length === 0
                     ? <p className="info-message info-message-home-page">No comments were made about this bike</p>
                     : comments.map((comment) => (
                         <BikeCommentCard
                             key={comment.bike_comment_id}
-                            author={comment.authorName}
+                            user={user}
+                            authorId={comment.authorId}
+                            authorName={comment.authorName}
+                            createdDateTime={comment.createdDateTime}
+                            updatedDateTime={comment.updatedDateTime}
+                            comment={comment.comment}
+                            commentId={comment.bike_comment_id}
+                            functionEditBikeComment={editBikeComment}
+                            disableEditCommentButton={disableEditCommentButton}
+                            functionDeleteBikeComment={deleteBikeComment}
+                            disableDeleteCommentButton={disableDeleteCommentButton}
                         />
                     ))}
                 </div>

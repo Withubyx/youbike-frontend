@@ -29,14 +29,14 @@
     cursor: pointer;
 }
 
-.button-table-data-cell-edit, .button-table-data-cell-delete {
+.button-main-small, .button-main-delete-small {
     padding: calc(3 * var(--inverse-of-html-font-size-16) * 1rem) calc(9 * var(--inverse-of-html-font-size-16) * 1rem);
     border-radius: 99px;
     background: var(--color-yellow-light);
     margin-left: calc(30 * var(--inverse-of-html-font-size-16) * 1rem);
 }
 
-.button-table-data-cell-delete {
+.button-main-delete-small {
     background: var(--color-button-delete);
 }
 
