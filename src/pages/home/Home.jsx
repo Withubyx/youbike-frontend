@@ -79,7 +79,7 @@ function Home() {
             />
             : <main className="outer-container">
                 <div className="inner-container-center">
-                    <h1>Discover Bikes & Bike Rides on YouBike</h1>
+                    <h1 className="h1-home-page">Discover Bikes & Bike Rides on YouBike</h1>
                     {randomBike && (
                         <BikeDetail
                             user={user}

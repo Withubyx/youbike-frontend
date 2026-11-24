@@ -44,12 +44,10 @@ function BikeCommentCard(
                         )}
                 </div>
             </div>
-            <div className="bike-comment-card-comment-container">
-                <p>{comment}</p>
-            </div>
+            <p className="comment-bike-comment-card-component">{comment}</p>
             {user !== null && user.userRole === "ROLE_CYCLIST" && authorId === user.id && (
-                <div className="bike-comment-card-edit-delete-container">
-                    <div className="bike-comment-card-buttons-container">
+                <div>
+                    <div className="bike-comment-card-edit-delete-buttons-container">
                         <Button
                             type="button"
                             name="edit"
@@ -83,12 +81,20 @@ function BikeCommentCard(
                                 />
                             </label>
                             {errors.comment && <p className="error-message">{errors.comment.message}</p>}
-                            <Button
-                                type="submit"
-                                name="Save"
-                                variant="button-main"
-                                disabled={disableEditCommentButton}
-                            />
+                            <div className="bike-comment-card-save-cancel-buttons-container">
+                                <Button
+                                    type="submit"
+                                    name="Save"
+                                    variant="button-main"
+                                    disabled={disableEditCommentButton}
+                                />
+                                <Button
+                                    type="button"
+                                    name="Cancel"
+                                    variant="button-main"
+                                    onClick={() => toggleUpdateCommentSection(false)}
+                                />
+                            </div>
                         </form>
                     )}
                 </div>

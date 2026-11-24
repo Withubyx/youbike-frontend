@@ -1,8 +1,115 @@
+.bike-detail-component-center {
+    margin-top: 1rem;
+}
 
+.bike-detail-component-content {
+    margin-left: 2.6rem;
+}
 
+.h2-random-bike-and-buttons-container, .h2-comments-and-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+.h2-text-bike-detail-component {
+    margin: 0;
+}
 
+.button-random-main-bike-detail-component, .button-main-bike-detail-component {
+    margin-left: 1.5rem;
+}
+
+.bike-detail-post-and-cancel-comment-buttons-container {
+    display: flex;
+    margin: 0.2rem 0 1.5rem 0;
+}
+
+.bike-detail-post-and-cancel-comment-buttons-container button {
+    margin-left: 0.5rem
+}
+
+.bike-detail-container-under-random-bike {
+    margin-top: 0.9rem;
+    width: 31.25rem;
+}
+
+.bike-image-bike-detail-component {
+    width: 31.25rem;
+    height: 21.125rem;
+    object-fit: cover;
+}
+
+.h2-comments-and-button-container {
+    margin: 1.4rem 0 0.8rem 0;
+}
 
 .bike-detail-container span {
     font-weight: 600;
+}
+
+.text-fit-element-bike-detail-component {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 500px) {
+    .bike-detail-component-content {
+        margin-left: 0;
+    }
+
+    .h2-random-bike-and-buttons-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-random-main-bike-detail-component {
+        margin: 0.5rem 0 0.2rem 0;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .bike-detail-container-under-random-bike {
+        width: 25rem;
+    }
+
+    .bike-image-bike-detail-component {
+        width: 25rem;
+        height: 17rem;
+    }
+
+    .bike-detail-container-under-random-bike textarea {
+        width: 23rem;
+    }
+}
+
+@media screen and (max-width: 343px) {
+    .bike-detail-container-under-random-bike {
+        width: 20rem;
+    }
+
+    .bike-image-bike-detail-component {
+        width: 20rem;
+        height: 13.6rem;
+    }
+
+    .bike-detail-container-under-random-bike textarea {
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 270px) {
+    .bike-detail-container-under-random-bike {
+        width: 15rem;
+    }
+
+    .bike-image-bike-detail-component {
+        width: 15rem;
+        height: 10.2rem;
+    }
+
+    .bike-detail-container-under-random-bike textarea {
+        width: 14rem;
+    }
 }

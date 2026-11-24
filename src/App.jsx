@@ -77,7 +77,6 @@ function App() {
                         : <Navigate to={navigationUrls.find(url => url.id === 'Sign In').url} />
                 }
             />
-
             <Route
                 path={navigationUrls.find(url => url.id === 'User content page').url}
                 element={
@@ -86,7 +85,6 @@ function App() {
                         : <Navigate to={navigationUrls.find(url => url.id === 'Sign In').url} />
                 }
             />
-
             <Route
                 path={navigationUrls.find(url => url.id === 'Sign In').url}
                 element={

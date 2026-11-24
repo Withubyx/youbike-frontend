@@ -14,24 +14,24 @@
 .h2-first-element-wrapper-user-content-page {
     position: absolute;
     display: flex;
-    left: calc(-51*var(--inverse-of-html-font-size-16) * 1rem);
+    left: -3.1875rem;
 }
 
 .h2-second-element-wrapper-user-content-page {
     position: absolute;
     display: flex;
-    left: calc(-75*var(--inverse-of-html-font-size-16) * 1rem);
+    left: -4.6875rem;
 }
 
 .h2-first-button-user-content-page {
-    margin-top: calc(14*var(--inverse-of-html-font-size-16) * 1rem);
-    margin-left: calc(24*var(--inverse-of-html-font-size-16) * 1rem);
+    margin-top: 0.875rem;
+    margin-left: 1.5rem;
 }
 
 .h2-second-button-user-content-page {
-    margin-top: calc(16*var(--inverse-of-html-font-size-16) * 1rem);
-    margin-left: calc(24*var(--inverse-of-html-font-size-16) * 1rem);
-    margin-bottom: calc(14 * var(--inverse-of-html-font-size-16) * 1rem);
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    margin-bottom: 0.875rem;
 }
 
 .h2-text-user-content-page {
@@ -39,18 +39,19 @@
 }
 
 .bike-cards-container-user-content-page {
-    margin: calc(14 * var(--inverse-of-html-font-size-16) * 1rem) 0;
+    margin: 0.875rem 0;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    row-gap: calc(12*var(--inverse-of-html-font-size-16) * 1rem)
+    row-gap: 0.75rem;
 }
 
 .bike-rides-table-user-content-page {
     width: 100%;
-    margin-bottom: calc(16*var(--inverse-of-html-font-size-16) * 1rem);
+    min-width: 0;
+    margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 450px) {
@@ -58,48 +59,49 @@
         position: absolute;
         display: flex;
         flex-direction: column;
-        left: calc(-51*var(--inverse-of-html-font-size-16) * 1rem);
+        left: -3.1875rem;
     }
 
     .h2-second-element-wrapper-user-content-page {
         position: absolute;
         display: flex;
         flex-direction: column;
-        left: calc(-75*var(--inverse-of-html-font-size-16) * 1rem);
+        left: -4.6875rem;
     }
 
     .h2-first-button-user-content-page {
-        margin-top: calc(14*var(--inverse-of-html-font-size-16) * 1rem);
-        margin-left: calc(-5*var(--inverse-of-html-font-size-16) * 1rem);
+        margin-top: 0.875rem;
+        margin-left: -0.3125rem;
     }
 
     .h2-second-button-user-content-page {
-        margin-top: calc(14*var(--inverse-of-html-font-size-16) * 1rem);
-        margin-left: calc(-2*var(--inverse-of-html-font-size-16) * 1rem);
-        margin-bottom: calc(14 * var(--inverse-of-html-font-size-16) * 1rem);
+        margin-top: 0.8751rem;
+        margin-left: -0.125rem;
+        margin-bottom: 0.875rem;
     }
 
     .h1-text-user-content-page {
-        font-size: 20px;
+        font-size: 2rem;
+        text-wrap: balance;
         text-align: center;
     }
 
     .h2-text-user-content-page {
-        margin-top: calc(60*var(--inverse-of-html-font-size-16) * 1rem);
+        margin-top: 3.75rem;
     }
 
     .first-info-message-user-content-page {
         position: absolute;
-        margin-left: calc(-80*var(--inverse-of-html-font-size-16) * 1rem);
+        margin-left: 5rem;
     }
 
     .second-info-message-user-content-page {
         position: absolute;
-        margin-left: calc(-95*var(--inverse-of-html-font-size-16) * 1rem);
+        margin-left: -5.9375rem;
     }
 
     .h2-second-button-user-content-page {
-        margin-bottom: calc(0 * var(--inverse-of-html-font-size-16) * 1rem);
+        margin-bottom: 0;
     }
 
     .bike-rides-table-user-content-page {

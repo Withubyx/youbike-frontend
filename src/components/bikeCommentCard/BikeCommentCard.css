@@ -1,1 +1,95 @@
+.bike-comment-card-container {
+    background-color: var(--color-background-of-input-field);
+    padding: 0.25rem;
+    width: 31.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
 
+.bike-comment-card-name-and-date-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bike-comment-card-date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.comment-bike-comment-card-component {
+    width: 30.75rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bike-comment-card-edit-delete-buttons-container {
+    display: flex;
+    justify-content: end;
+}
+
+.bike-comment-card-edit-delete-buttons-container button {
+    margin-left: 0.8rem;
+    margin-bottom: 0.125rem;
+    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.20);
+}
+
+.bike-comment-card-save-cancel-buttons-container {
+    margin: 0.2rem 0 0.5rem 0;
+
+}
+
+.bike-comment-card-save-cancel-buttons-container button {
+    margin: 0 0.25rem 0 0.25rem;
+}
+
+@media screen and (max-width: 420px) {
+    .bike-comment-card-name-and-date-container {
+        flex-direction: column;
+    }
+
+    .bike-comment-card-date-container {
+        align-items: start;
+    }
+
+    .bike-comment-card-container {
+        width: 25rem;
+    }
+
+    .comment-bike-comment-card-component {
+        width: 24.5rem;
+    }
+
+    .bike-comment-card-container textarea{
+        width: 23rem;
+    }
+}
+
+@media screen and (max-width: 343px) {
+    .bike-comment-card-container {
+        width: 20rem;
+    }
+
+    .comment-bike-comment-card-component {
+        width: 19.5rem;
+    }
+
+    .bike-comment-card-container textarea{
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 270px) {
+    .bike-comment-card-container {
+        width: 15rem;
+    }
+
+    .comment-bike-comment-card-component {
+        width: 14.5rem;
+    }
+
+    .bike-comment-card-container textarea{
+        width: 14rem;
+    }
+}

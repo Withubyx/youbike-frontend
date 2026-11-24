@@ -1,8 +1,8 @@
 .button-main, .button-main-delete {
     font-weight: 500;
-    padding: calc(12 * var(--inverse-of-html-font-size-16) * 1rem) calc(16 * var(--inverse-of-html-font-size-16) * 1rem);
+    padding: 0.75rem 1rem;
     border-radius: 99px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
+    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.20);
     background: var(--color-yellow-light);
     width: fit-content;
     white-space: nowrap;
@@ -13,7 +13,8 @@
 }
 
 .button-main:hover, .button-main-delete:hover {
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.40);
+    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.40);
+    font-weight: 700;
 }
 
 .button-table-header {
@@ -25,21 +26,16 @@
     height: 100%;
 }
 
-.button-table-header:hover, .button-table-data-cell:hover {
-    cursor: pointer;
-}
-
 .button-main-small, .button-main-delete-small {
-    padding: calc(3 * var(--inverse-of-html-font-size-16) * 1rem) calc(9 * var(--inverse-of-html-font-size-16) * 1rem);
+    padding: 0.16rem 0.4rem;
     border-radius: 99px;
     background: var(--color-yellow-light);
-    margin-left: calc(30 * var(--inverse-of-html-font-size-16) * 1rem);
 }
 
 .button-main-delete-small {
     background: var(--color-button-delete);
 }
 
-
-
-
+.button-table-header:hover, .button-table-data-cell:hover, .button-main-small:hover, .button-main-delete-small:hover {
+    font-weight: 900;
+}

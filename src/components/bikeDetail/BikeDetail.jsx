@@ -134,20 +134,21 @@ function BikeDetail(
     }
 
     return (
-        <article className="bike-detail">
+        <article className="bike-detail-component-center">
+            <div className="bike-detail-component-content">
             {forHomePage && (
-                <div>
-                    <div>
-                        <h2>Random Bike</h2>
+                <div className="h2-random-bike-and-buttons-container">
+                    <h2 className="h2-text-bike-detail-component">Random Bike</h2>
+                    <div className="button-random-main-bike-detail-component">
                         <Button
                             type="button"
                             name="Next Random Bike"
                             variant="button-main"
                             onClick={() => processNextRandomBike()}
                         />
-                        {errorMessageNextRandomBike && <p className="error-message">{errorMessageNextRandomBike}</p>}
                     </div>
-                    <div>
+                    {errorMessageNextRandomBike && <p className="error-message">{errorMessageNextRandomBike}</p>}
+                    <div className="button-random-main-bike-detail-component">
                         <Button
                             type="button"
                             name="Download Bike Image"
@@ -155,58 +156,68 @@ function BikeDetail(
                             onClick={() => downloadBikeImageFunction()}
                             disabled={disableDownloadBikeImageButton}
                         />
-                        {errorMessageDownloadBikeImage && <p className="error-message">{errorMessageDownloadBikeImage}</p>}
                     </div>
+                    {errorMessageDownloadBikeImage && <p className="error-message">{errorMessageDownloadBikeImage}</p>}
                 </div>
             )}
-            <div className="bike-detail-container">
-                <img className="bike-image" src={bikeImage} alt="bike image" />
-                <p><span>Brand: </span>{bike.brand}</p>
-                <p><span>Model: </span>{bike.model}</p>
-                <p><span>Description: </span>{bike.description}</p>
-                <p><span>Owner: </span>{bike.ownerName}</p>
-                <div className="h2-container-bike-detail">
-                    <h2>Comments</h2>
-                    <Button
-                        type="button"
-                        name="Add Comment"
-                        variant="button-main"
-                        onClick={() => user !== null
-                            ? user.userRole === "ROLE_CYCLIST"
-                                ? toggleCommentSection(true)
-                                : setCommentSectionCyclistRestricted("Only Cyclists can place a comment")
-                            : navigate(`/sign-in`)
-                        }
-                        disabled={disablePostCommentButton}
-                    />
-                    {commentSection && (
-                        <form onSubmit={handleSubmit(handlePostFormSubmit)} className="comment-form-bike-detail">
-                            <label htmlFor="user-comment">Share your thoughts about this bike
-                                <textarea
-                                    id="user-comment"
-                                    {...register("comment", {
-                                        required: {
-                                            value: true,
-                                            message: "Comment is required."
-                                        },
-                                        maxLength: {
-                                            value: 255,
-                                            message: "Comment must be at most 255 characters long."
-                                        }
+            <div className="bike-detail-container-under-random-bike">
+                <img className="bike-image-bike-detail-component" src={bikeImage} alt="bike image" />
+                <p className="text-fit-element-bike-detail-component"><span>Brand: </span>{bike.brand}</p>
+                <p className="text-fit-element-bike-detail-component"><span>Model: </span>{bike.model}</p>
+                <p className="text-fit-element-bike-detail-component"><span>Description: </span>{bike.description}</p>
+                <p className="text-fit-element-bike-detail-component"><span>Owner: </span>{bike.ownerName}</p>
+                <div className="h2-comments-and-button-container">
+                    <h2 className="h2-text-bike-detail-component">Comments</h2>
+                    <div className="button-main-bike-detail-component">
+                        <Button
+                            type="button"
+                            name="Add Comment"
+                            variant="button-main"
+                            onClick={() => user !== null
+                                ? user.userRole === "ROLE_CYCLIST"
+                                    ? toggleCommentSection(true)
+                                    : setCommentSectionCyclistRestricted("Only Cyclists can place a comment")
+                                : navigate(`/sign-in`)
+                            }
+                            disabled={disablePostCommentButton}
+                        />
+                    </div>
+                </div>
+                {commentSection && (
+                    <form onSubmit={handleSubmit(handlePostFormSubmit)} className="comment-form-bike-detail">
+                        <label htmlFor="user-comment">Share your thoughts about this bike
+                            <textarea
+                                id="user-comment"
+                                {...register("comment", {
+                                    required: {
+                                        value: true,
+                                        message: "Comment is required."
+                                    },
+                                    maxLength: {
+                                        value: 255,
+                                        message: "Comment must be at most 255 characters long."
                                     }
-                                )}
-                                />
-                            </label>
-                            {errors.comment && <p className="error-message">{errors.comment.message}</p>}
+                                }
+                            )}
+                            />
+                        </label>
+                        {errors.comment && <p className="error-message">{errors.comment.message}</p>}
+                        <div className="bike-detail-post-and-cancel-comment-buttons-container">
                             <Button
                                 type="submit"
                                 name="Post comment"
                                 variant="button-main"
                                 disabled={disablePostCommentButton}
                             />
-                        </form>
-                    )}
-                </div>
+                            <Button
+                                type="button"
+                                name="Cancel"
+                                variant="button-main"
+                                onClick={() => toggleCommentSection(false)}
+                            />
+                        </div>
+                    </form>
+                )}
                 {commentSectionCyclistRestricted && <p className="info-message info-message-home-page">{commentSectionCyclistRestricted}</p>}
                 {errorGetCommentsMessage && <p className="error-message">{errorGetCommentsMessage}</p>}
                 {errorPostCommentMessage && <p className="error-message">{errorPostCommentMessage}</p>}
@@ -230,7 +241,8 @@ function BikeDetail(
                             disableDeleteCommentButton={disableDeleteCommentButton}
                         />
                     ))}
-                </div>
+            </div>
+            </div>
         </article>
     )
 }
