@@ -6,11 +6,11 @@ label {
 input, select, textarea {
     background-color: var(--color-background-of-input-field);
     color: var(--color-placeholder-text);
-    font-size: calc(16*var(--inverse-of-html-font-size-16)*1rem);
+    font-size: 1rem;
     font-weight: 600;
     border: 1px solid var(--color-border-of-input-field);
     box-shadow: 0.5px 0.5px 1px 1px var(--color-border-of-input-field-shadow);
-    border-radius: calc(8*var(--inverse-of-html-font-size-16)*1rem);
+    border-radius: 0.5rem;
     outline: none;
 }
 
@@ -19,38 +19,38 @@ input, select, textarea {
 }
 
 .radio-type-input-wrapper {
-    padding-left: calc(16*var(--inverse-of-html-font-size-16)*1rem);
+    padding-left: 1rem;
     width: auto;
-    height: calc(48*var(--inverse-of-html-font-size-16)*1rem);
+    height: 3rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: calc(32*var(--inverse-of-html-font-size-16)*1rem);
+    gap: 2rem;
 }
 
 .radio-type-input-label {
     margin: 0;
     display: flex;
     flex-direction: row;
-    gap: calc(8*var(--inverse-of-html-font-size-16)*1rem);
+    gap: 0.5rem;
 }
 
 .radio-type-input {
     accent-color: var(--color-text);
-    margin-top: calc(2*var(--inverse-of-html-font-size-16)*1rem);
-    height: calc(16*var(--inverse-of-html-font-size-16)*1rem);
+    margin-top: 0.125rem;
+    height: 1rem;
     width: fit-content;
 }
 
 .checkbox-type-input {
     accent-color: var(--color-text);
-    margin-right: calc(3*var(--inverse-of-html-font-size-16)*1rem);
+    margin-right: 0.1875rem;
     width: fit-content;
     height: fit-content;
 }
 
 .checkbox-label {
-    margin-top: calc(2*var(--inverse-of-html-font-size-16)*1rem);
+    margin-top: 0.125rem;
     color: var(--color-placeholder-text);
 }
 

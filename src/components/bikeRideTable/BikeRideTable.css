@@ -2,6 +2,7 @@
     border: 1px solid var(--color-text);
     border-collapse: collapse;
     width: 100%;
+    table-layout: fixed;
 }
 
 .bike-ride-table tr {
@@ -14,7 +15,7 @@
 }
 
 .title-column, .start-date-time-column, .city-column, .distance-column, .speed-column {
-    flex-basis: calc(280*var(--inverse-of-html-font-size-16) * 1rem);
+    flex-basis: 17.5rem;
 }
 
 .bike-rides-table-user-content-page .title-column,
@@ -22,39 +23,44 @@
 .bike-rides-table-user-content-page .city-column,
 .bike-rides-table-user-content-page .distance-column,
 .bike-rides-table-user-content-page .speed-column {
-    flex-basis: calc(220*var(--inverse-of-html-font-size-16) * 1rem);
+    flex-basis: 13.75rem;
 }
 
 .delete-column, .edit-column {
-    flex-basis: calc(150*var(--inverse-of-html-font-size-16) * 1rem);
+    flex-basis: 9.375rem;
 }
 
-.title-column, .start-date-time-column {
+.title-column {
     flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.start-date-time-column {
+    flex-grow: 0;
     flex-shrink: 0;
 }
 
 .city-column {
     flex-grow: 1;
-    flex-shrink: 1;
+    flex-shrink: 4;
 }
 
 .distance-column, .speed-column {
     flex-grow: 1;
-    flex-shrink: 4;
+    flex-shrink: 6;
 }
 
 .delete-column, .edit-column {
-    flex-grow: 1;
-    flex-shrink: 0;
+    flex-grow: 0;
+    flex-shrink: 6;
 }
 
 .header-cell {
     display: flex;
     align-items: center;
-    padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
+    padding-left: 0.3125rem;
     border: 1px solid var(--color-text);
-    height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
+    height: 2.25rem;
     background-color: var(--color-yellow-light);
     white-space: nowrap;
     overflow: hidden;
@@ -64,9 +70,9 @@
 .data-cell {
     display: flex;
     align-items: center;
-    padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
+    padding-left: 0.3125rem;
     border-bottom: 1px solid var(--color-border);
-    height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
+    height: 2.25rem;
     background-color: var(--color-green-light);
     white-space: nowrap;
     overflow: hidden;
@@ -76,9 +82,9 @@
 .sorted-header-cell {
     display: flex;
     align-items: center;
-    padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
+    padding-left: 0.3125rem;
     border: 1px solid var(--color-text);
-    height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
+    height: 2.25rem;
     background-color: var(--color-yellow);
     white-space: nowrap;
     overflow: hidden;
@@ -88,68 +94,54 @@
 .sorted-data-cell {
     display: flex;
     align-items: center;
-    padding-left: calc(5*var(--inverse-of-html-font-size-16) * 1rem);
+    padding-left: 0.3125rem;
     border-bottom: 1px solid var(--color-border);
-    height: calc(36*var(--inverse-of-html-font-size-16) * 1rem);
+    height: 2.25rem;
     background-color: var(--color-green);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.hover-bike-ride-table:hover {
-    filter: brightness(92%);
+.delete-column .button-main-delete-small {
+    margin-left: calc((100% - 3.93rem) / 2);
 }
 
-@media screen and (max-width: 1360px) {
-    .delete-column {
-        flex-basis: 80px;
-    }
+.edit-column .button-main-small {
+    margin-left: calc((100% - 2.7rem) / 2);
+}
 
-    .edit-column {
-        flex-basis: 60px;
-    }
-
+@media screen and (max-width: 1024px) {
     .speed-column {
         display: none;
     }
 }
 
-@media screen and (max-width: 1310px) {
+@media screen and (max-width: 768px) {
     .distance-column {
         display: none;
     }
 }
 
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 558px) {
     .city-column {
         display: none;
     }
 }
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 450px) {
     .start-date-time-column {
         display: none;
     }
 }
 
-@media screen and (max-width: 605px) {
-    .title-column {
-        width: 80px;
-    }
-
-    .bike-ride-table {
-        border: none;
-    }
-}
-
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 300px) {
     .delete-column {
         display: none;
     }
 }
 
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 240px) {
     .edit-column {
         display: none;
     }

@@ -62,7 +62,7 @@ function Navigation({ classNameList, closeHamburgerMenu }) {
                 <NavLink
                     to={(navigationUrls.find((url)=> url.id === item.id)).url}
                     end
-                    onClick={closeHamburgerMenu}
+                    onClick={() => closeHamburgerMenu?.()}
                     className={({ isActive }) => isActive ? `active-link` : 'default-link'}
                 >
                     {item.label}
@@ -76,7 +76,7 @@ function Navigation({ classNameList, closeHamburgerMenu }) {
                 <Button
                     type={item.type}
                     name={item.name}
-                    onClick={() => {item.onClick(); closeHamburgerMenu();}}
+                    onClick={() => {item.onClick(); closeHamburgerMenu?.();}}
                 />
             </li>
         )}

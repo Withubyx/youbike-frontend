@@ -23,13 +23,6 @@
     --color-border-of-input-field-shadow: rgba(212, 212, 212, 0.20);
     --color-border-of-input-field-shadow-in-focus: rgba(59, 190, 112, 0.20);
     --color-background-of-input-field: #FFFFFF;
-
-    /* The value below is used for converting css values in this project.
-    These css values are sizes based on html font-size 16 design. When these css values are multiplied with the value below
-    the result can then be multiplied with the rem value, resulting in the css values for the screen size in use (responsiveness).
-    This is accomplished because the rem values (html font-sizes) in this project are varied based on screen size (media queries).
-    (The value below is calculated by dividing 1 by 16.) */
-    --inverse-of-html-font-size-16: 0.0625;
 }
 
 *{
@@ -56,7 +49,7 @@ html {
 
 body {
     font-family: Inter, Arial, sans-serif;
-    font-size: calc(16*var(--inverse-of-html-font-size-16)*1rem);
+    font-size: 1rem;
     font-weight: 400;
     color: var(--color-text);
 }
@@ -69,21 +62,21 @@ h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: calc(36*var(--inverse-of-html-font-size-16)*1rem);
-    margin-top: calc(32*var(--inverse-of-html-font-size-16)*1rem);
+    font-size: 2.25rem;
+    margin-top: 2rem;
 }
 
 h2 {
     font-weight: 600;
-    font-size: calc(20*var(--inverse-of-html-font-size-16)*1rem);
-    margin-top: calc(25*var(--inverse-of-html-font-size-16)*1rem);
+    font-size: 1.25rem;
+    margin-top: 1.5625rem;
 }
 
 button {
     border: none;
     cursor: pointer;
     font-family: Inter, Arial, sans-serif;
-    font-size: calc(16*var(--inverse-of-html-font-size-16)*1rem);
+    font-size: 1rem;
 }
 
 .NavigationBar {
@@ -92,18 +85,18 @@ button {
 
 .info-message {
     color: var(--color-info-message);
-    font-size: calc(17*var(--inverse-of-html-font-size-16)*1rem);
+    font-size: 1.0625rem;
     font-weight: 400;
-    margin-top: calc(22*var(--inverse-of-html-font-size-16)*1rem);
+    margin-top: 1.375rem;
     white-space: nowrap;
 }
 
 .error-message {
     color: var(--color-error-message);
-    font-size: calc(17*var(--inverse-of-html-font-size-16)*1rem);
+    font-size: 1.0625rem;
     font-weight: 400;
     font-style: italic;
-    margin-top: calc(22*var(--inverse-of-html-font-size-16)*1rem);
+    margin-top: 1.375rem;
 }
 
 @media (max-width: 768px) {

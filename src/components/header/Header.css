@@ -1,6 +1,6 @@
 
 .header {
-    height: calc(100*var(--inverse-of-html-font-size-16)*1rem);
+    height:6.25rem;
     background-color: var(--color-background-of-header-footer);
 }
 
@@ -20,12 +20,12 @@
 
 .youbike-logo-wrapper {
     position: absolute;
-    left: calc(-250*var(--inverse-of-html-font-size-16)*1rem);
+    left: -15.625rem;
 }
 
 .youbike-logo {
-    width: calc(500*var(--inverse-of-html-font-size-16)*1rem);
-    height: calc(100*var(--inverse-of-html-font-size-16)*1rem);
+    width: 31.25rem;
+    height: 6.25rem;
 }
 
 @media screen and (max-width: 600px) {

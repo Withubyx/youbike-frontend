@@ -15,25 +15,25 @@
     .h1-element-wrapper-bike-rides-page {
         position: absolute;
         display: flex;
-        left: calc(-170 * var(--inverse-of-html-font-size-16) * 1rem);
+        left: -10.625rem;
     }
 
     .h1-button-bike-rides-page {
-        margin-top: calc(38 * var(--inverse-of-html-font-size-16) * 1rem);
-        margin-left: calc(24 * var(--inverse-of-html-font-size-16) * 1rem);
+        margin-top: 2.375rem;
+        margin-left: 1.5rem;
     }
 
     .bike-rides-table-bike-rides-page {
-        margin: calc(16 * var(--inverse-of-html-font-size-16) * 1rem) 0 calc(8 * var(--inverse-of-html-font-size-16) * 1rem) 0;
+        margin: 1rem 0 0.5rem 0;
         width: 100%;
     }
 }
 
 @media screen and (max-width: 1079px) {
     .h1-button-bike-rides-page {
-        margin-left: calc(93 * var(--inverse-of-html-font-size-16) * 1rem);
-        margin-top: calc(4 * var(--inverse-of-html-font-size-16) * 1rem);
-        margin-bottom: calc(20 * var(--inverse-of-html-font-size-16) * 1rem);
+        margin-left: 5.8125rem;
+        margin-top: 0.25rem;
+        margin-bottom: 1.25rem;
     }
 }
 
@@ -44,14 +44,8 @@
     }
 
     .h1-button-bike-rides-page {
-        margin-left: calc(80 * var(--inverse-of-html-font-size-16) * 1rem);
-        margin-top: calc(4 * var(--inverse-of-html-font-size-16) * 1rem);
-        margin-bottom: calc(20 * var(--inverse-of-html-font-size-16) * 1rem);
-    }
-}
-
-@media screen and (max-width: 606px) {
-    .bike-rides-table-bike-rides-page{
-        margin-left: calc(-170 * var(--inverse-of-html-font-size-16) * 1rem);
+        margin-left: 5rem;
+        margin-top: 0.25rem;
+        margin-bottom: 1.25rem;
     }
 }

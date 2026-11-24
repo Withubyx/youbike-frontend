@@ -66,7 +66,7 @@ function BikeRideTable({bikeRides, sortBy, setSortBy, forUserContentPage, delete
                                  type="button"
                                  name="Delete"
                                  onClick={() => deleteBikeRideFunction(bikeRide.bike_ride_id)}
-                                 variant="button-table-data-cell-delete"
+                                 variant="button-main-delete-small"
                              />
                          </td>
                          )}
@@ -76,7 +76,7 @@ function BikeRideTable({bikeRides, sortBy, setSortBy, forUserContentPage, delete
                                  type="button"
                                  name="Edit"
                                  onClick={() => navigate(`/bike-rides/${bikeRide.bike_ride_id}/update`)}
-                                 variant="button-table-data-cell-edit"
+                                 variant="button-main-small"
                              />
                          </td>
                      )}
