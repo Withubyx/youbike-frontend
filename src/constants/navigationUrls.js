@@ -1,5 +1,6 @@
 const navigationUrls = [
     {id: 'Home', url: '/'},
+    {id: 'Bike', url: '/bikes/:bikeId'},
     {id: 'Bikes', url: '/bikes'},
     {id: 'Create Bike', url: '/create-bike'},
     {id: 'Update Bike', url: '/bikes/:bikeId/update'},

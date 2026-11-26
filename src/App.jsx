@@ -1,6 +1,7 @@
 import Header from "./components/header/Header.jsx";
 import NavigationBar from "./components/navigationBar/NavigationBar.jsx";
 import Home from "./pages/home/Home.jsx";
+import Bike from "./pages/bike/Bike.jsx";
 import Bikes from "./pages/bikes/Bikes.jsx";
 import CreateBike from "./pages/createBike/CreateBike.jsx";
 import UpdateBike from "./pages/updateBike/UpdateBike.jsx";
@@ -29,6 +30,7 @@ function App() {
         <NavigationBar />
         <Routes>
             <Route path={navigationUrls.find(url => url.id === 'Home').url} element={<Home />} />
+            <Route path={navigationUrls.find(url => url.id === 'Bike').url} element={<Bike />} />
             <Route path={navigationUrls.find(url => url.id === 'Bikes').url} element={<Bikes />} />
             <Route
                 path={navigationUrls.find(url => url.id === 'Create Bike').url}
