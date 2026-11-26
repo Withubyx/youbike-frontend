@@ -6,12 +6,14 @@ import axios from "axios";
 import {youBikeApiBaseUrl} from "../../config/configuration.js";
 import {useForm} from "react-hook-form";
 import BikeCommentCard from "../bikeCommentCard/BikeCommentCard.jsx";
+import {transformBikeTypeEnumToScreenFormat} from "../../helpers/transformToScreenFormat.js";
 
 function BikeDetail(
     {
         user,
         bikeImage,
         bike,
+        forBikePage,
         forHomePage,
         errorMessageNextRandomBike,
         errorMessageDownloadBikeImage,
@@ -161,10 +163,12 @@ function BikeDetail(
                 </div>
             )}
             <div className="bike-detail-container-under-random-bike">
-                <img className="bike-image-bike-detail-component" src={bikeImage} alt="bike image" />
+                <img className="bike-image-bike-detail-component" src={bikeImage} alt={`${bike.brand} model ${bike.model} bike image`}/>
+                {forBikePage && <p className="text-fit-element-bike-detail-component"><span>Bike type: </span>{transformBikeTypeEnumToScreenFormat(bike.bikeType)}</p>}
                 <p className="text-fit-element-bike-detail-component"><span>Brand: </span>{bike.brand}</p>
                 <p className="text-fit-element-bike-detail-component"><span>Model: </span>{bike.model}</p>
-                <p className="text-fit-element-bike-detail-component"><span>Description: </span>{bike.description}</p>
+                {forBikePage && bike.color && <p className="text-fit-element-bike-detail-component"><span>Color: </span>{bike.color}</p>}
+                {bike.description && <p className="text-fit-element-bike-detail-component"><span>Description: </span>{bike.description}</p>}
                 <p className="text-fit-element-bike-detail-component"><span>Owner: </span>{bike.ownerName}</p>
                 <div className="h2-comments-and-button-container">
                     <h2 className="h2-text-bike-detail-component">Comments</h2>

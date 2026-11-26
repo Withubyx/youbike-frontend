@@ -59,3 +59,24 @@ export function transformSpeedEnumToScreenFormat(speedEnum) {
     }
     return speedScreenFormat;
 }
+
+export function transformBikeTypeEnumToScreenFormat(bikeTypeEnum) {
+    let bikeTypeScreenFormat;
+    switch (bikeTypeEnum) {
+        case "RACE":
+            bikeTypeScreenFormat = "Race"
+            break;
+        case "CYCLOCROSS":
+            bikeTypeScreenFormat = "Cyclocross"
+            break;
+        case "GRAVEL":
+            bikeTypeScreenFormat = "Gravel"
+            break;
+        case "MTB":
+            bikeTypeScreenFormat = "Mountainbike"
+            break;
+        case "OTHER":
+            bikeTypeScreenFormat = "Other";
+    }
+    return bikeTypeScreenFormat;
+}

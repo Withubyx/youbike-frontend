@@ -10,7 +10,7 @@ function BikeCard({bikeId, bikeImage, brand, model, owner, forUserContentPage, d
             <div
                 className="bike-card"
                 onClick={() => navigate(`/bikes/${bikeId}`)}>
-                <img className="bike-image" src={bikeImage} alt="bike image" />
+                <img className="bike-image" src={bikeImage} alt={`${brand} model ${model} bike image`} />
                 <div className="bike-info">
                     <p><span>Brand: </span>{brand}</p>
                     <p><span>Model: </span>{model}</p>
